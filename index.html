@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -37,9 +37,9 @@
         --yellow: #f7d66c;
         --purple: #a38bff;
         --green: #86f29a;
-        --pixel: "Press Start 2P", monospace;
-        --body: "Inter", Arial, sans-serif;
-        --code: "JetBrains Mono", monospace;
+        --pixel: "Pixelify Sans", sans-serif;
+        --body: "Pixelify Sans", sans-serif;
+        --code: "Pixelify Sans", sans-serif;
       }
       * {
         box-sizing: border-box;
@@ -178,7 +178,7 @@
         width: 23px;
         text-align: center;
         color: var(--purple);
-        font-family: monospace;
+        font-family: var(--pixel);
         font-size: 17px;
       }
       .side-divider {
@@ -1313,6 +1313,14 @@ else:
                 >💡 MATCH THE LANGUAGE SYNTAX</span
               >
               <div class="editor-tools">
+                <label class="verification-picker" for="verificationMethod">
+                  <span data-i18n-key="verifyWith">VERIFY WITH</span>
+                  <select id="verificationMethod" aria-label="Choose an answer verification method">
+                    <option value="combined" data-i18n-key="verifyCombined">Combined check</option>
+                    <option value="goal" data-i18n-key="verifyGoal">Learning goal</option>
+                    <option value="syntax" data-i18n-key="verifySyntax">Syntax scan</option>
+                  </select>
+                </label>
                 <button class="text-btn" id="hintButton" data-i18n-key="hint">
                   HINT</button
                 ><button class="text-btn" id="resetCode" data-i18n-key="reset">

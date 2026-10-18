@@ -431,6 +431,9 @@
   Object.assign(locales.en,{courseCount:"116 LESSONS · 14 LANGUAGES",sixLanguages:"14 LANGUAGES",fiveLevels:"8–9 LESSONS PER COURSE",polyglotCopy:"Clear all fourteen courses",allLevelsCleared:"COURSE COMPLETE",levelsCleared:"LESSONS CLEARED",chooseLevel:"Choose a lesson"});
   Object.assign(locales.th,{courseCount:"116 บทเรียน · 14 ภาษา",sixLanguages:"14 ภาษา",fiveLevels:"คอร์สละ 8–9 บทเรียน",polyglotCopy:"ผ่านครบทั้ง 14 คอร์ส",allLevelsCleared:"จบหลักสูตรแล้ว",levelsCleared:"บทเรียนที่ผ่านแล้ว",chooseLevel:"เลือกบทเรียน"});
   Object.assign(locales.es,{courseCount:"116 LECCIONES · 14 LENGUAJES",sixLanguages:"14 LENGUAJES",fiveLevels:"8–9 LECCIONES POR CURSO",polyglotCopy:"Completa los catorce cursos",allLevelsCleared:"CURSO COMPLETADO",levelsCleared:"LECCIONES COMPLETADAS",chooseLevel:"Elige una lección"});
+  Object.assign(locales.en,{verifyWith:"VERIFY WITH",verifyCombined:"Combined check · goal + syntax",verifyGoal:"Learning goal only",verifySyntax:"Syntax scan only",syntaxScanPassed:"No syntax issues were detected by this best-effort scan. This does not prove the code runs or meets the challenge goal.",goalPassedTryCombined:"The code matches the challenge requirements. Run the combined check to verify syntax and complete the lesson.",goalPassedSyntaxUncertain:"The code matches the challenge requirements, but the syntax scan found possible issues. Review them, then use the combined check to complete the lesson."});
+  Object.assign(locales.th,{verifyWith:"วิธีตรวจ",verifyCombined:"ตรวจรวม · เป้าหมาย + ไวยากรณ์",verifyGoal:"ตรวจเป้าหมายการเรียน",verifySyntax:"ตรวจไวยากรณ์",syntaxScanPassed:"การตรวจเบื้องต้นไม่พบข้อผิดพลาดด้านไวยากรณ์ แต่ยังยืนยันไม่ได้ว่าโค้ดทำงานหรือผ่านเป้าหมายโจทย์",goalPassedTryCombined:"โค้ดตรงตามข้อกำหนดของโจทย์แล้ว ใช้การตรวจรวมเพื่อตรวจไวยากรณ์และผ่านบทเรียน",goalPassedSyntaxUncertain:"โค้ดตรงตามข้อกำหนดแล้ว แต่การตรวจไวยากรณ์พบจุดที่อาจมีปัญหา ตรวจดูแล้วใช้การตรวจรวมเพื่อผ่านบทเรียน"});
+  Object.assign(locales.es,{verifyWith:"VERIFICAR CON",verifyCombined:"Comprobación completa · objetivo + sintaxis",verifyGoal:"Solo objetivo de aprendizaje",verifySyntax:"Solo revisión de sintaxis",syntaxScanPassed:"Esta revisión aproximada no detectó errores de sintaxis. No confirma que el código se ejecute ni que cumpla el objetivo.",goalPassedTryCombined:"El código cumple los requisitos del reto. Usa la comprobación completa para revisar la sintaxis y completar la lección.",goalPassedSyntaxUncertain:"El código cumple los requisitos, pero la revisión de sintaxis detectó posibles problemas. Revísalos y usa la comprobación completa para completar la lección."});
   locales.en.pageTitle = "Byte Quest — Learn to Code";
   locales.th.pageTitle = "Byte Quest — ฝึกเขียนโค้ด";
   locales.es.pageTitle = "Byte Quest — Aprende a programar";
@@ -489,7 +492,7 @@
     } catch { return Object.assign({}, defaultProgress); }
   }
   let progress = loadState(), activeLanguage = "Python", activeLevel = 0, supabaseClient = null, currentUser = null, cloudSyncReady = false, tutorialStep = 0, storageWarningShown = false;
-  const editor = $("#editor"), code = $("#code"), select = $("#langSelect"), levelSelect = $("#levelSelect"), feedback = $("#feedback");
+  const editor = $("#editor"), code = $("#code"), select = $("#langSelect"), levelSelect = $("#levelSelect"), feedback = $("#feedback"), verificationMethod = $("#verificationMethod");
   const localeSelect = $("#localeSelect");
   let activeLocale = (() => { try { const saved = localStorage.getItem("byteQuest.locale"); if (locales[saved]) return saved; } catch {} const browser = (navigator.language || "en").slice(0, 2).toLowerCase(); return locales[browser] ? browser : "en"; })();
   function tr(key, values = {}) { let text = locales[activeLocale]?.[key] ?? locales.en[key] ?? key; for (const [name, value] of Object.entries(values)) text = text.replaceAll(`{${name}}`, String(value)); return text; }
@@ -791,6 +794,14 @@
     const result = warmup ? lesson.practice.validate(code.value) : lesson.validate(code.value);
     const errors = Array.isArray(result) ? result : result ? [] : ["Check the required syntax and try again."];
     const syntaxIssues=diagnoseSyntax(activeLanguage,code.value);
+    if (verificationMethod.value === "syntax") {
+      if (syntaxIssues.length) return showDiagnostics(syntaxIssues);
+      return showFeedback(tr("syntaxScanPassed"), true);
+    }
+    if (verificationMethod.value === "goal") {
+      if (errors.length) return showDiagnostics(formatDiagnostics(activeLanguage,code.value,errors));
+      return showFeedback(syntaxIssues.length ? tr("goalPassedSyntaxUncertain") : tr("goalPassedTryCombined"), true);
+    }
     if (errors.length || syntaxIssues.length) return showDiagnostics(formatDiagnostics(activeLanguage,code.value,errors));
     if (warmup) {
       progress.completedPractice.push(lessonKey() + "-practice");
