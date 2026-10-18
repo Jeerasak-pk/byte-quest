@@ -1,0 +1,11 @@
+{
+  "name": "Byte Quest — Learn to Code",
+  "short_name": "Byte Quest",
+  "description": "Learn programming through short, playful coding quests.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10121e",
+  "theme_color": "#10121e",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b1018" />
+    <meta
+      name="description"
+      content="Learn 14 languages including Python, JavaScript, TypeScript, Rust, C#, PHP, Ruby, and Kotlin through guided coding quests."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BYTE QUEST — Learn to Code by Playing" />
+    <meta
+      property="og:description"
+      content="Choose a language, learn one idea, and solve bite-sized coding levels."
+    />
+    <meta name="color-scheme" content="dark" />
+    <title>BYTE QUEST — Learn to Code by Playing</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #10121e;
+        --panel: #191c2c;
+        --panel2: #202438;
+        --line: #343952;
+        --muted: #8990aa;
+        --text: #f4f2ff;
+        --cyan: #61f3da;
+        --pink: #ff72b6;
+        --yellow: #f7d66c;
+        --purple: #a38bff;
+        --green: #86f29a;
+        --pixel: "Press Start 2P", monospace;
+        --body: "Inter", Arial, sans-serif;
+        --code: "JetBrains Mono", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--body);
+        font-size: 22px;
+        min-height: 100vh;
+        background-image: radial-gradient(#25283b 1px, transparent 1px);
+        background-size: 22px 22px;
+      }
+      button,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        color: inherit;
+      }
+      .app {
+        max-width: 1440px;
+        margin: auto;
+        padding: 20px 26px 36px;
+      }
+      .topbar {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 22px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-icon {
+        width: 42px;
+        height: 42px;
+        background: var(--cyan);
+        color: #10121e;
+        display: grid;
+        place-items: center;
+        clip-path: polygon(
+          0 0,
+          75% 0,
+          75% 25%,
+          100% 25%,
+          100% 100%,
+          25% 100%,
+          25% 75%,
+          0 75%
+        );
+        font-family: var(--pixel);
+        font-size: 14px;
+      }
+      .brand-name {
+        font: 13px var(--pixel);
+      }
+      .brand-name span {
+        color: var(--cyan);
+      }
+      .top-right {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .streak {
+        color: var(--yellow);
+      }
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--pink);
+        background: #34223e;
+        display: grid;
+        place-items: center;
+        color: var(--pink);
+      }
+      .top-meta {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 240px minmax(0, 1fr) 278px;
+        gap: 20px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: 4px 4px 0 #090a12;
+      }
+      .eyebrow {
+        font: 9px var(--pixel);
+        color: var(--muted);
+        letter-spacing: 0.4px;
+      }
+      .sidebar {
+        padding: 19px 14px;
+        height: max-content;
+      }
+      .side-title {
+        padding: 0 9px 14px;
+      }
+      .nav {
+        display: grid;
+        gap: 5px;
+      }
+      .nav button {
+        border: 0;
+        background: transparent;
+        text-align: left;
+        padding: 10px 11px;
+        color: #a8aec5;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 22px;
+      }
+      .nav button:hover,
+      .nav button.active {
+        background: #282c43;
+        color: var(--cyan);
+      }
+      .nav button.active {
+        box-shadow: inset 3px 0 var(--cyan);
+      }
+      .nav-icon {
+        width: 23px;
+        text-align: center;
+        color: var(--purple);
+        font-family: monospace;
+        font-size: 17px;
+      }
+      .side-divider {
+        height: 1px;
+        background: var(--line);
+        margin: 18px 4px;
+      }
+      .xp-box {
+        margin: 14px 8px 4px;
+        padding: 12px;
+        background: #202438;
+        border: 1px solid #383d59;
+      }
+      .xp-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        margin: 7px 0;
+      }
+      .xp-row b {
+        color: var(--yellow);
+        font-weight: normal;
+      }
+      .bar {
+        height: 8px;
+        background: #0f1120;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--yellow);
+        width: 68%;
+      }
+      .content {
+        min-width: 0;
+      }
+      .welcome {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin: 2px 0 17px;
+      }
+      .welcome h1 {
+        font: 17px var(--pixel);
+        line-height: 1.8;
+        margin: 7px 0 4px;
+      }
+      .welcome p {
+        margin: 0;
+        color: #aeb4c9;
+        font-size: 21px;
+      }
+      .date {
+        color: var(--muted);
+        font-size: 19px;
+      }
+      .hero {
+        padding: 20px 22px;
+        margin-bottom: 18px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(115deg, #22243a, #1b2030 70%);
+        border-color: #464563;
+      }
+      .hero:after {
+        content: "✦";
+        position: absolute;
+        right: 38px;
+        top: -9px;
+        font-size: 112px;
+        color: #343554;
+        opacity: 0.55;
+        transform: rotate(12deg);
+      }
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+      }
+      .tag {
+        font: 8px var(--pixel);
+        padding: 8px 9px;
+        color: var(--cyan);
+        border: 1px solid #397c79;
+        background: #183330;
+      }
+      .hero h2 {
+        font: 15px var(--pixel);
+        line-height: 1.8;
+        max-width: 560px;
+        margin: 19px 0 9px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero p {
+        color: #afb4c8;
+        margin: 0 0 16px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-bottom {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        position: relative;
+        z-index: 1;
+      }
+      .btn {
+        border: 0;
+        padding: 10px 14px;
+        background: var(--cyan);
+        color: #10121e;
+        font: 9px var(--pixel);
+        box-shadow: 3px 3px 0 #287d71;
+      }
+      .btn:hover {
+        transform: translate(1px, 1px);
+        box-shadow: 2px 2px 0 #287d71;
+      }
+      .meta {
+        color: #a2a8c0;
+        font-size: 19px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 18px 1px 10px;
+      }
+      .section-head h3 {
+        font: 10px var(--pixel);
+        margin: 0;
+      }
+      .text-btn {
+        border: 0;
+        background: transparent;
+        color: var(--cyan);
+        font-size: 19px;
+      }
+      .lang-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 11px;
+      }
+      .lang-card {
+        padding: 13px 14px;
+        min-height: 103px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: 3px 3px 0 #090a12;
+        transition: 0.15s;
+        cursor: pointer;
+      }
+      .lang-card:hover,
+      .lang-card.selected {
+        border-color: var(--cyan);
+        transform: translateY(-2px);
+      }
+      .lang-card.selected {
+        background: #202b35;
+      }
+      .lang-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lang-logo {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        background: #25283b;
+        font: 11px var(--pixel);
+        color: var(--cyan);
+        border: 1px solid #3e435e;
+      }
+      .lang-card:nth-child(2) .lang-logo {
+        color: var(--yellow);
+      }
+      .lang-card:nth-child(3) .lang-logo {
+        color: var(--pink);
+      }
+      .lang-card:nth-child(4) .lang-logo {
+        color: #82b8ff;
+      }
+      .lang-card:nth-child(5) .lang-logo {
+        color: #c1a0ff;
+      }
+      .lang-card:nth-child(6) .lang-logo {
+        color: #ff9a76;
+      }
+      .lang-name {
+        font-size: 23px;
+      }
+      .level {
+        margin-top: 9px;
+        display: flex;
+        justify-content: space-between;
+        color: #858ca7;
+        font-size: 17px;
+      }
+      .dots {
+        color: var(--green);
+        letter-spacing: 2px;
+      }
+      .lower-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .mini-panel {
+        padding: 14px;
+      }
+      .mini-panel h4 {
+        font: 8px var(--pixel);
+        margin: 0 0 11px;
+        color: #d7d6e8;
+      }
+      .mission-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #2d3147;
+        padding: 8px 0;
+        color: #b1b7ca;
+      }
+      .mission-row strong {
+        font-size: 20px;
+        font-weight: normal;
+      }
+      .mission-row em {
+        font-style: normal;
+        color: var(--yellow);
+        font-size: 18px;
+      }
+      .rightcol {
+        display: grid;
+        align-content: start;
+        gap: 14px;
+      }
+      .profile-card {
+        padding: 17px;
+      }
+      .profile-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .profile-pic {
+        height: 45px;
+        width: 45px;
+        background: #273d47;
+        border: 2px solid var(--cyan);
+        display: grid;
+        place-items: center;
+        color: var(--cyan);
+        font-size: 25px;
+      }
+      .profile-name {
+        font-size: 24px;
+      }
+      .profile-rank {
+        font-size: 18px;
+        color: var(--muted);
+      }
+      .profile-stat {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-top: 1px solid #2e3247;
+        color: #a9afc4;
+      }
+      .profile-stat b {
+        font-weight: normal;
+        color: var(--text);
+      }
+      .week {
+        padding: 15px;
+      }
+      .week-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .week-title strong {
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .week-title span {
+        font-size: 18px;
+        color: var(--green);
+      }
+      .week-days {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        color: #858ba4;
+        font-size: 16px;
+      }
+      .day-dot {
+        height: 25px;
+        width: 25px;
+        margin: 4px auto 0;
+        display: grid;
+        place-items: center;
+        font-size: 17px;
+        background: #292d40;
+        color: #747b92;
+      }
+      .day-dot.done {
+        background: #244e4c;
+        color: var(--cyan);
+      }
+      .day-dot.today {
+        outline: 1px solid var(--yellow);
+        color: var(--yellow);
+      }
+      .achievement {
+        padding: 15px;
+      }
+      .achievement-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .achievement-head strong {
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .achievement-head span {
+        color: var(--pink);
+      }
+      .ach-row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 7px 0;
+      }
+      .ach-icon {
+        height: 30px;
+        width: 30px;
+        background: #332a40;
+        display: grid;
+        place-items: center;
+        color: var(--yellow);
+      }
+      .ach-text {
+        font-size: 20px;
+      }
+      .ach-text small {
+        display: block;
+        font-size: 16px;
+        color: #858ba4;
+      }
+      .ach-lock {
+        opacity: 0.42;
+      }
+      .editor {
+        margin-top: 15px;
+        display: none;
+      }
+      .editor.open {
+        display: block;
+      }
+      .editor-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 14px;
+        background: #22263a;
+        border-bottom: 1px solid var(--line);
+      }
+      .editor-title {
+        font: 9px var(--pixel);
+        color: var(--cyan);
+      }
+      .select {
+        background: #171a29;
+        color: var(--text);
+        border: 1px solid #41465f;
+        padding: 5px 9px;
+        font-size: 19px;
+        outline: none;
+      }
+      .task-prompt {
+        padding: 13px 15px;
+        color: #b8bfd0;
+        border-bottom: 1px solid var(--line);
+        font-size: 20px;
+      }
+      .task-prompt b {
+        color: var(--yellow);
+        font-weight: normal;
+      }
+      .code-wrap {
+        display: grid;
+        grid-template-columns: 39px 1fr;
+        background: #11131f;
+        min-height: 167px;
+      }
+      .line-numbers {
+        padding: 12px 8px;
+        text-align: right;
+        color: #60677e;
+        white-space: pre-line;
+        font: 17px/1.4 var(--body);
+        border-right: 1px solid #282c3f;
+      }
+      .code-input {
+        width: 100%;
+        min-height: 167px;
+        border: 0;
+        resize: vertical;
+        outline: none;
+        background: transparent;
+        color: #c6f4d7;
+        padding: 12px 13px;
+        font: 18px/1.4 var(--body);
+        tab-size: 2;
+      }
+      .editor-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px 13px;
+        background: #1a1d2c;
+        border-top: 1px solid var(--line);
+      }
+      .hint {
+        color: #858ba4;
+        font-size: 18px;
+      }
+      .check-btn {
+        background: var(--pink);
+        box-shadow: 3px 3px 0 #923d68;
+        color: #1a1020;
+      }
+      .feedback {
+        display: none;
+        padding: 10px 14px;
+        background: #19322b;
+        color: var(--green);
+        border-top: 1px solid #35624f;
+      }
+      .feedback.show {
+        display: block;
+      }
+      .feedback.wrong {
+        background: #3a252d;
+        color: #ff9fa9;
+      }
+      .toast {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #22263a;
+        border: 1px solid var(--cyan);
+        padding: 10px 17px;
+        color: var(--cyan);
+        display: none;
+        box-shadow: 4px 4px #090a12;
+        z-index: 3;
+      }
+      .toast.show {
+        display: block;
+      }
+      @media (max-width: 1100px) {
+        .layout {
+          grid-template-columns: 210px minmax(0, 1fr);
+        }
+        .rightcol {
+          grid-column: 2;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 760px) {
+        .app {
+          padding: 12px;
+        }
+        .topbar {
+          height: 58px;
+        }
+        .brand-name {
+          font-size: 10px;
+        }
+        .top-right {
+          gap: 10px;
+        }
+        .layout {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .sidebar {
+          padding: 8px;
+        }
+        .side-title,
+        .side-divider,
+        .xp-box {
+          display: none;
+        }
+        .nav {
+          display: flex;
+          overflow: auto;
+          gap: 3px;
+        }
+        .nav button {
+          white-space: nowrap;
+          padding: 7px 9px;
+        }
+        .rightcol {
+          grid-column: auto;
+          grid-template-columns: 1fr 1fr;
+        }
+        .profile-card {
+          grid-column: 1/-1;
+        }
+        .date {
+          display: none;
+        }
+        .welcome h1 {
+          font-size: 13px;
+        }
+        .lang-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .lower-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding: 17px;
+        }
+        .hero h2 {
+          font-size: 12px;
+        }
+        .hero:after {
+          right: 0;
+        }
+        .profile-stat {
+          font-size: 18px;
+        }
+      }
+      @media (max-width: 420px) {
+        .rightcol {
+          grid-template-columns: 1fr;
+        }
+        .profile-card {
+          grid-column: auto;
+        }
+        .lang-card {
+          padding: 10px;
+          min-height: 93px;
+        }
+        .lang-name {
+          font-size: 21px;
+        }
+      }
+      .editor-tools {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .editor-tools .text-btn {
+        font-size: 18px;
+      }
+      .account-modal {
+        position: fixed;
+        inset: 0;
+        background: #080a12d9;
+        z-index: 10;
+        display: none;
+        place-items: center;
+        padding: 18px;
+      }
+      .account-modal.open {
+        display: grid;
+      }
+      .account-dialog {
+        position: relative;
+        width: min(460px, 100%);
+        padding: 26px;
+      }
+      .account-dialog h2 {
+        font: 13px var(--pixel);
+        line-height: 1.8;
+        margin: 16px 0 8px;
+      }
+      .account-dialog p {
+        color: #aeb4c9;
+        margin: 0 0 18px;
+      }
+      .modal-close {
+        position: absolute;
+        right: 12px;
+        top: 10px;
+        background: transparent;
+        border: 0;
+        color: var(--muted);
+        font-size: 28px;
+      }
+      .account-dialog form {
+        display: grid;
+        gap: 9px;
+      }
+      .account-dialog label {
+        color: var(--cyan);
+      }
+      .account-dialog input {
+        background: #10121e;
+        border: 1px solid var(--line);
+        color: var(--text);
+        padding: 10px 12px;
+        outline: none;
+      }
+      .account-dialog input:focus {
+        border-color: var(--cyan);
+      }
+      .account-dialog form .btn {
+        margin-top: 5px;
+      }
+      .signout {
+        margin-top: 12px;
+      }
+      .lang-card.done:after {
+        content: "✓";
+        float: right;
+        color: var(--green);
+        font-size: 20px;
+      }
+      .avatar {
+        padding: 0;
+      }
+      .avatar:hover {
+        outline: 2px solid var(--cyan);
+      }
+      .account-modal[aria-hidden="true"] {
+        pointer-events: none;
+      }
+      .editor-tools .text-btn:hover {
+        color: var(--pink);
+      }
+      @media (max-width: 540px) {
+        .editor-actions {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .editor-tools {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .editor-tools .check-btn {
+          margin-left: auto;
+        }
+        .account-dialog {
+          padding: 22px;
+        }
+        .welcome h1 {
+          line-height: 1.7;
+        }
+      }
+      .ach-row.earned .ach-icon {
+        background: #244e4c;
+        color: var(--cyan);
+      }
+      .profile-stat b {
+        font-weight: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#dashboard" data-i18n-key="skip"
+      >Skip to content</a
+    >
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-icon">B</div>
+          <div class="brand-name">BYTE <span>QUEST</span></div>
+        </div>
+        <div class="top-right">
+          <label
+            class="sr-only"
+            for="localeSelect"
+            data-i18n-key="languageLabel"
+            >Language</label
+          ><select
+            class="locale-select"
+            id="localeSelect"
+            aria-label="Language"
+          >
+            <option value="en">English</option>
+            <option value="th">ไทย</option>
+            <option value="es">Español</option>
+          </select>
+          <div class="top-meta streak">
+            🔥 <span id="streakCount">1</span
+            ><span style="color: #aeb4c9" data-i18n-key="dayStreak"
+              >DAY STREAK</span
+            >
+          </div>
+          <div class="top-meta">🪙 <span id="coinCount">0</span></div>
+          <button class="avatar" id="accountButton" aria-label="Account">
+            P1
+          </button>
+        </div>
+      </header>
+      <div class="layout">
+        <aside class="sidebar panel">
+          <div class="side-title eyebrow" data-i18n-key="menu">MENU</div>
+          <nav class="nav">
+            <button class="active" data-section="dashboard">
+              <span class="nav-icon">▦</span
+              ><span data-i18n-key="home">Home</span></button
+            ><button data-section="missions">
+              <span class="nav-icon">⚔</span
+              ><span data-i18n-key="quests">Quests</span></button
+            ><button data-section="languages">
+              <span class="nav-icon">⌘</span
+              ><span data-i18n-key="courses">Courses</span></button
+            ><button data-section="leaderboard">
+              <span class="nav-icon">♛</span
+              ><span data-i18n-key="leaderboard">Leaderboard</span>
+            </button>
+          </nav>
+          <div class="side-divider"></div>
+          <div
+            class="eyebrow"
+            style="padding: 0 9px"
+            data-i18n-key="playerLevel"
+          >
+            PLAYER LEVEL
+          </div>
+          <div class="xp-box">
+            <div class="xp-row">
+              <span id="xpLevelLabel">LV. 08 · Novice</span><b>680 XP</b>
+            </div>
+            <div class="bar"><i></i></div>
+            <div class="xp-row" style="color: #858ba4; margin-bottom: 0">
+              <span data-i18n-key="nextLevel">NEXT LEVEL</span
+              ><span>320 XP</span>
+            </div>
+          </div>
+        </aside>
+        <main class="content" id="dashboard">
+          <div class="welcome">
+            <div>
+              <div class="eyebrow" data-i18n-key="arcade">
+                YOUR CODING ARCADE
+              </div>
+              <h1 data-i18n-key="welcomeTitle">Pick your first quest.</h1>
+              <p data-i18n-key="welcomeCopy">
+                Choose a language, learn one idea, then solve bite-sized levels.
+              </p>
+            </div>
+            <div class="date" data-i18n-key="courseCount">
+              116 LESSONS · 14 LANGUAGES
+            </div>
+          </div>
+          <section class="hero panel">
+            <div class="hero-scene" aria-hidden="true">
+              <svg
+                class="hero-art"
+                viewBox="0 0 520 280"
+                preserveAspectRatio="xMidYMid slice"
+              >
+                <defs>
+                  <linearGradient id="sky" x2="0" y2="1">
+                    <stop stop-color="#252d64" />
+                    <stop offset=".58" stop-color="#71549a" />
+                    <stop offset="1" stop-color="#f09a78" />
+                  </linearGradient>
+                  <linearGradient id="gate" x2="0" y2="1">
+                    <stop stop-color="#7effef" />
+                    <stop offset="1" stop-color="#39a9d4" />
+                  </linearGradient>
+                  <pattern
+                    id="pixel-grid"
+                    width="16"
+                    height="16"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M16 0H0V16"
+                      fill="none"
+                      stroke="#d7e8ff"
+                      stroke-opacity=".035"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="520" height="280" fill="url(#sky)" />
+                <rect width="520" height="280" fill="url(#pixel-grid)" />
+                <g fill="#fff4bf">
+                  <path
+                    d="M42 40h4v4h-4zm36 24h3v3h-3zm102-34h4v4h-4zm65 48h3v3h-3zm128-42h4v4h-4zm84 31h3v3h-3zm31-40h4v4h-4z"
+                  />
+                  <path
+                    d="M128 18h2v14h-2zm-6 6h14v2h-14zM420 88h2v12h-2zm-5 5h12v2h-12z"
+                  />
+                </g>
+                <path
+                  d="M0 178 68 116l34 30 76-88 51 67 63-48 78 77 43-42 107 68v100H0z"
+                  fill="#354476"
+                />
+                <path
+                  d="m0 194 76-61 43 33 71-62 51 53 61-32 70 57 57-45 91 45v98H0z"
+                  fill="#253a62"
+                />
+                <path d="M0 221h520v59H0z" fill="#182b3f" />
+                <path d="M0 215h520v12H0z" fill="#526d57" />
+                <path d="M0 227h520v8H0z" fill="#294b45" />
+                <path d="M0 245h520v7H0zm0 21h520v5H0z" fill="#203b40" />
+                <g fill="#78a76a">
+                  <path
+                    d="M24 204h8v11h-8zm-5 8h18v5H19zm101-13h7v16h-7zm-5 12h17v5h-17zm283-18h8v21h-8zm-5 17h18v5h-18z"
+                  />
+                </g>
+                <g opacity=".9">
+                  <path d="M336 224v-37h8v-11h36v11h8v37z" fill="#18374e" />
+                  <path d="M345 224v-35h34v35z" fill="url(#gate)" />
+                  <path d="M352 224v-26h20v26z" fill="#294261" />
+                  <path
+                    d="M340 185h44v5h-44zm-5 5h5v34h-5zm44 0h5v34h-5z"
+                    fill="#abfff0"
+                    opacity=".75"
+                  />
+                  <path d="M346 224h32v5h-32z" fill="#131f38" />
+                </g>
+                <path
+                  d="M54 209h54v6H54zm11-7h32v7H65zM194 216h58v5h-58zm11-7h35v7h-35z"
+                  fill="#f7d66c"
+                  opacity=".75"
+                />
+                <path
+                  d="M0 251h520"
+                  stroke="#9bd88d"
+                  stroke-opacity=".35"
+                  stroke-width="2"
+                /></svg
+              ><span class="hero-sun"></span
+              ><span class="hero-crate">{}<br />01</span>
+            </div>
+            <div class="hero-top">
+              <span class="tag" data-i18n-key="startHere">⚡ START HERE</span
+              ><span class="eyebrow" data-i18n-key="nextStep"
+                >YOUR NEXT STEP</span
+              >
+            </div>
+            <h2 data-i18n-key="heroTitle">
+              LEARN TO CODE<br />ONE QUEST AT A TIME
+            </h2>
+            <p data-i18n-key="heroCopy">
+              New to coding? Start with Python. Pick any course below to jump
+              in.
+            </p>
+            <div class="hero-bottom">
+              <button class="btn" id="startQuest" data-i18n-key="startLearning">
+                START LEARNING&nbsp; ▶</button
+              ><span class="meta" data-i18n-key="sixLanguages">14 LANGUAGES</span
+              ><span class="meta" data-i18n-key="fiveLevels"
+                >8 LESSONS EACH</span
+              >
+            </div>
+          </section>
+          <div class="section-head" id="languages">
+            <h3 data-i18n-key="chooseCourse">CHOOSE A COURSE TO START</h3>
+            <button class="text-btn" id="allLanguages" data-i18n-key="viewAll">
+              VIEW ALL ↗
+            </button>
+          </div>
+          <div class="course-filters" role="group" aria-label="Filter courses">
+            <button
+              class="course-filter active"
+              data-filter="all"
+              data-i18n-key="allCourses"
+            >
+              All courses</button
+            ><button
+              class="course-filter"
+              data-filter="programming"
+              data-i18n-key="programming"
+            >
+              Programming</button
+            ><button
+              class="course-filter"
+              data-filter="web"
+              data-i18n-key="webDevelopment"
+            >
+              Web development</button
+            ><button
+              class="course-filter"
+              data-filter="data"
+              data-i18n-key="data"
+            >
+              Data
+            </button>
+          </div>
+          <div class="lang-grid">
+            <article
+              class="lang-card selected"
+              data-lang="Python"
+              data-category="programming"
+            >
+              <div class="lang-head">
+                <div class="lang-logo">Py</div>
+                <div class="lang-name">Python</div>
+              </div>
+              <div class="level">
+                <span>LESSON 01 · CONDITIONS</span
+                ><span class="dots">●○○○○○○○</span>
+              </div>
+            </article>
+            <article
+              class="lang-card"
+              data-lang="JavaScript"
+              data-category="programming"
+            >
+              <div class="lang-head">
+                <div class="lang-logo">JS</div>
+                <div class="lang-name">JavaScript</div>
+              </div>
+              <div class="level">
+                <span>LESSON 01 · CONDITIONS</span><span class="dots">●○○○○○○○</span>
+              </div>
+            </article>
+            <article class="lang-card" data-lang="HTML" data-category="web">
+              <div class="lang-head">
+                <div class="lang-logo">&lt;/&gt;</div>
+                <div class="lang-name">HTML</div>
+              </div>
+              <div class="level">
+                <span>LESSON 01 · PAGE STRUCTURE</span><span class="dots">●○○○○○○○</span>
+              </div>
+            </article>
+            <article class="lang-card" data-lang="CSS" data-category="web">
+              <div class="lang-head">
+                <div class="lang-logo">#</div>
+                <div class="lang-name">CSS</div>
+              </div>
+              <div class="level">
+                <span>LESSON 01 · SELECTORS</span><span class="dots">●○○○○○○○</span>
+              </div>
+            </article>
+            <article class="lang-card" data-lang="SQL" data-category="data">
+              <div class="lang-head">
+                <div class="lang-logo">DB</div>
+                <div class="lang-name">SQL</div>
+              </div>
+              <div class="level">
+                <span>LESSON 01 · FILTERED QUERIES</span><span class="dots">●○○○○○○○</span>
+              </div>
+            </article>
+            <article
+              class="lang-card"
+              data-lang="Java"
+              data-category="programming"
+            >
+              <div class="lang-head">
+                <div class="lang-logo">Jv</div>
+                <div class="lang-name">Java</div>
+              </div>
+              <div class="level">
+                <span>LESSON 01 · CONDITIONALS</span
+                ><span class="dots">●○○○○○○○</span>
+              </div>
+            </article>
+            <article class="lang-card" data-lang="Cpp" data-category="programming">
+              <div class="lang-head"><div class="lang-logo">C++</div><div class="lang-name">C++</div></div>
+              <div class="level"><span>LESSON 01 · PROGRAM STRUCTURE</span><span class="dots">●○○○○○○○</span></div>
+            </article>
+            <article class="lang-card" data-lang="Go" data-category="programming">
+              <div class="lang-head"><div class="lang-logo">Go</div><div class="lang-name">Go</div></div>
+              <div class="level"><span>LESSON 01 · PACKAGES &amp; MAIN</span><span class="dots">●○○○○○○○</span></div>
+            </article>
+            <article class="lang-card" data-lang="TypeScript" data-category="programming"><div class="lang-head"><div class="lang-logo">TS</div><div class="lang-name">TypeScript</div></div><div class="level"><span>LESSON 01 · TYPES &amp; OUTPUT</span><span class="dots">●○○○○○○○</span></div></article>
+            <article class="lang-card" data-lang="Rust" data-category="programming"><div class="lang-head"><div class="lang-logo">Rs</div><div class="lang-name">Rust</div></div><div class="level"><span>LESSON 01 · MACROS &amp; MAIN</span><span class="dots">●○○○○○○○</span></div></article>
+            <article class="lang-card" data-lang="CSharp" data-category="programming"><div class="lang-head"><div class="lang-logo">C#</div><div class="lang-name">C#</div></div><div class="level"><span>LESSON 01 · PROGRAM OUTPUT</span><span class="dots">●○○○○○○○○</span></div></article>
+            <article class="lang-card" data-lang="PHP" data-category="programming"><div class="lang-head"><div class="lang-logo">PHP</div><div class="lang-name">PHP</div></div><div class="level"><span>LESSON 01 · TAGS &amp; OUTPUT</span><span class="dots">●○○○○○○○○</span></div></article>
+            <article class="lang-card" data-lang="Ruby" data-category="programming"><div class="lang-head"><div class="lang-logo">rb</div><div class="lang-name">Ruby</div></div><div class="level"><span>LESSON 01 · OUTPUT &amp; STRINGS</span><span class="dots">●○○○○○○○</span></div></article>
+            <article class="lang-card" data-lang="Kotlin" data-category="programming"><div class="lang-head"><div class="lang-logo">Kt</div><div class="lang-name">Kotlin</div></div><div class="level"><span>LESSON 01 · MAIN &amp; OUTPUT</span><span class="dots">●○○○○○○○○</span></div></article>
+          </div>
+          <section class="editor panel" id="editor">
+            <div class="quest-transition" id="questTransition" aria-hidden="true"><span></span><i></i></div>
+            <div class="editor-head">
+              <span class="editor-title" data-i18n-key="codeArena"
+                >▸ CODE ARENA</span
+              >
+              <div class="editor-controls">
+                <button
+                  class="text-btn"
+                  id="tutorialToggle"
+                  type="button"
+                  aria-expanded="false"
+                  data-i18n-key="guidedTutorial"
+                >
+                  GUIDED TUTORIAL</button
+                ><button
+                  class="text-btn fullscreen-button"
+                  id="fullscreenToggle"
+                  type="button"
+                  aria-pressed="false"
+                  data-i18n-key="fullscreen"
+                >
+                  ⛶ FULLSCREEN</button
+                ><label
+                  class="sr-only"
+                  for="langSelect"
+                  data-i18n-key="codeLanguage"
+                  >Code language</label
+                ><select
+                  class="select"
+                  id="langSelect"
+                  aria-label="Choose a language"
+                >
+                  <option>Python</option>
+                  <option>JavaScript</option>
+                  <option>HTML</option>
+                  <option>CSS</option>
+                  <option>SQL</option>
+                  <option>Java</option>
+                  <option value="Cpp">C++</option>
+                  <option>Go</option>
+                  <option>TypeScript</option>
+                  <option>Rust</option>
+                  <option value="CSharp">C#</option>
+                  <option>PHP</option>
+                  <option>Ruby</option>
+                  <option>Kotlin</option></select
+                ><label
+                  class="sr-only"
+                  for="levelSelect"
+                  data-i18n-key="chooseLevel"
+                  >Choose a lesson</label
+                ><select
+                  class="select"
+                  id="levelSelect"
+                  aria-label="Choose a lesson"
+                ></select>
+              </div>
+            </div>
+            <section class="lesson-brief" aria-labelledby="lessonConcept">
+              <div class="lesson-brief-head">
+                <div><span class="lesson-kicker" data-i18n-key="lessonHeading">LEARN THE IDEA</span><h3 id="lessonConcept"></h3></div>
+                <span class="lesson-sigil" aria-hidden="true">✦</span>
+              </div>
+              <p class="lesson-explanation" id="lessonExplanation"></p>
+              <aside class="lesson-insight" aria-label="Key takeaway"><span>KEY TAKEAWAY</span><p id="lessonInsight"></p></aside>
+              <div class="syntax-label" data-i18n-key="syntaxExample">SYNTAX EXAMPLE</div>
+              <pre class="lesson-example" id="lessonExample"></pre>
+              <div class="lesson-source"><span id="lessonSourceLabel">REFERENCE MATERIAL</span><a id="lessonSource" href="https://docs.python.org/3/tutorial/index.html" target="_blank" rel="noopener noreferrer">Python Tutorial · Python Software Foundation</a><a id="lessonSourceMore" href="https://docs.python.org/3/reference/index.html" target="_blank" rel="noopener noreferrer">Python Language Reference</a><small id="lessonSourceNote">Original explanations and exercises are adapted for this learning game.</small></div>
+            </section>
+            <div class="challenge-heading"><span id="challengeHeadingLabel" data-i18n-key="challengeHeading">YOUR TURN · SOLVE THE CHALLENGE</span><span id="challengeStage"></span></div>
+            <div class="task-prompt" id="prompt">
+              Level 1: Check whether <b>score is at least 10</b>, then print
+              “Level cleared.”
+            </div>
+            <section class="level-preview-notice" id="levelPreviewNotice" aria-live="polite" hidden>
+              <div><strong id="previewOnlyTitle">CURRICULUM PREVIEW</strong><p id="previewOnlyCopy">Read the lesson concept and reference now. Clear earlier levels to unlock its exercises.</p></div>
+              <button class="btn" id="returnCurrentLevel" type="button">RETURN TO LEVEL 1</button>
+            </section>
+            <section
+              class="tutorial-panel"
+              id="tutorialPanel"
+              aria-live="polite"
+              hidden
+            >
+              <div class="tutorial-top">
+                <div>
+                  <span class="tutorial-kicker" data-i18n-key="guidedTutorial"
+                    >GUIDED TUTORIAL</span
+                  >
+                  <h3 id="tutorialTitle">Read the code</h3>
+                </div>
+                <span class="tutorial-progress" id="tutorialProgress"
+                  >1 / 3</span
+                >
+              </div>
+              <p class="tutorial-copy" id="tutorialCopy"></p>
+              <pre class="tutorial-example" id="tutorialExample"></pre>
+              <div class="tutorial-actions">
+                <button
+                  class="text-btn"
+                  id="tutorialClose"
+                  type="button"
+                  data-i18n-key="exitTutorial"
+                >
+                  EXIT TUTORIAL
+                </button>
+                <div>
+                  <button
+                    class="text-btn"
+                    id="tutorialPrev"
+                    type="button"
+                    data-i18n-key="back"
+                  >
+                    ← BACK</button
+                  ><button
+                    class="btn"
+                    id="tutorialNext"
+                    type="button"
+                    data-i18n-key="next"
+                  >
+                    NEXT →
+                  </button>
+                </div>
+              </div>
+            </section>
+            <div class="code-wrap">
+              <div class="line-numbers" id="lineNumbers">
+                1<br />2<br />3<br />4<br />5
+              </div>
+              <textarea
+                class="code-input"
+                id="code"
+                spellcheck="false"
+                aria-label="Code editor"
+              >
+score = 12
+if score &gt;= 10:
+    print("Level cleared")
+else:
+    print("Try again")</textarea
+              >
+            </div>
+            <div class="editor-actions">
+              <span class="hint" id="hintText" data-i18n-key="matchSyntax"
+                >💡 MATCH THE LANGUAGE SYNTAX</span
+              >
+              <div class="editor-tools">
+                <button class="text-btn" id="hintButton" data-i18n-key="hint">
+                  HINT</button
+                ><button class="text-btn" id="resetCode" data-i18n-key="reset">
+                  RESET</button
+                ><button
+                  class="btn check-btn"
+                  id="checkCode"
+                  data-i18n-key="checkAnswer"
+                >
+                  CHECK ANSWER&nbsp; ▶
+                </button>
+              </div>
+            </div>
+            <div
+              class="feedback"
+              id="feedback"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </section>
+          <div class="lower-grid">
+            <section class="mini-panel panel">
+              <h4 data-i18n-key="myQuests">▸ MY QUESTS</h4>
+              <div class="mission-row">
+                <strong data-i18n-key="clearEveryLevel"
+                  >CLEAR EVERY LEVEL</strong
+                ><em id="missionCount">0/30</em>
+              </div>
+              <div class="bar">
+                <i
+                  id="missionBar"
+                  style="width: 0%; background: var(--green)"
+                ></i>
+              </div>
+            </section>
+            <section class="mini-panel panel">
+              <h4 data-i18n-key="continueLearning">▸ CONTINUE LEARNING</h4>
+              <div class="mission-row">
+                <strong id="continueLabel"
+                  >Python · IF / ELSE · CONDITIONALS</strong
+                ><button
+                  class="text-btn"
+                  id="continueQuest"
+                  data-i18n-key="continue"
+                >
+                  CONTINUE →
+                </button>
+              </div>
+            </section>
+          </div>
+        </main>
+        <aside class="rightcol">
+          <section class="profile-card panel">
+            <div class="profile-head">
+              <div class="profile-pic">P1</div>
+              <div>
+                <div class="profile-name" data-i18n-key="playerName">
+                  Pixel Rookie
+                </div>
+                <div class="profile-rank" data-i18n-key="playerRank">
+                  ⚔ NOVICE ADVENTURER
+                </div>
+              </div>
+            </div>
+            <div class="side-divider" style="margin: 13px 0 5px"></div>
+            <div class="profile-stat">
+              <span data-i18n-key="levelsCleared">LESSONS CLEARED</span
+              ><b>116 LESSONS</b>
+            </div>
+            <div class="profile-stat">
+              <span data-i18n-key="progressSaved">PROGRESS SAVED</span
+              ><b>Saved locally</b>
+            </div>
+            <div class="profile-stat">
+              <span data-i18n-key="totalXp">TOTAL XP</span
+              ><b style="color: var(--yellow)">2,480 XP</b>
+            </div>
+          </section>
+          <section class="week panel">
+            <div class="week-title">
+              <strong data-i18n-key="practiceStreak">🔥 PRACTICE STREAK</strong
+              ><span id="streakLabel">START YOUR FIRST QUEST!</span>
+            </div>
+            <div class="week-days">
+              <div>
+                <span data-i18n-key="mon">MON</span>
+                <div class="day-dot" data-day="0">·</div>
+              </div>
+              <div>
+                <span data-i18n-key="tue">TUE</span>
+                <div class="day-dot" data-day="1">·</div>
+              </div>
+              <div>
+                <span data-i18n-key="wed">WED</span>
+                <div class="day-dot" data-day="2">·</div>
+              </div>
+              <div>
+                <span data-i18n-key="thu">THU</span>
+                <div class="day-dot" data-day="3">·</div>
+              </div>
+              <div>
+                <span data-i18n-key="fri">FRI</span>
+                <div class="day-dot" data-day="4">·</div>
+              </div>
+              <div>
+                <span data-i18n-key="sat">SAT</span>
+                <div class="day-dot" data-day="5">·</div>
+              </div>
+              <div>
+                <span data-i18n-key="sun">SUN</span>
+                <div class="day-dot" data-day="6">·</div>
+              </div>
+            </div>
+          </section>
+          <section class="achievement panel">
+            <div class="achievement-head">
+              <strong data-i18n-key="achievements">🏆 ACHIEVEMENTS</strong
+              ><span id="badgeCount">0/3</span>
+            </div>
+            <div class="ach-row">
+              <div class="ach-icon">⚡</div>
+              <div class="ach-text">
+                <span data-i18n-key="firstQuest">FIRST QUEST</span
+                ><small data-i18n-key="firstQuestCopy"
+                  >Clear your first lesson</small
+                >
+              </div>
+            </div>
+            <div class="ach-row">
+              <div class="ach-icon">🔥</div>
+              <div class="ach-text">
+                <span data-i18n-key="polyglot">POLYGLOT</span
+                ><small data-i18n-key="polyglotCopy"
+                  >Clear all fourteen courses</small
+                >
+              </div>
+            </div>
+            <div class="ach-row ach-lock">
+              <div class="ach-icon">♜</div>
+              <div class="ach-text">
+                <span data-i18n-key="onARoll">ON A ROLL</span
+                ><small data-i18n-key="onARollCopy"
+                  >Practice three days in a row</small
+                >
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="account-modal" id="accountModal" aria-hidden="true">
+      <div
+        class="account-dialog panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="accountTitle"
+      >
+        <button class="modal-close" id="closeAccount" aria-label="Close">
+          ×
+        </button>
+        <div class="eyebrow" data-i18n-key="saveQuest">SAVE YOUR QUEST</div>
+        <h2 id="accountTitle" data-i18n-key="syncProgress">
+          SYNC YOUR PROGRESS
+        </h2>
+        <p data-i18n-key="accountCopy">
+          Play without an account and keep your progress on this device. Sign in
+          with an email link to sync across devices.
+        </p>
+        <form id="signInForm">
+          <label for="emailInput" data-i18n-key="emailAddress"
+            >EMAIL ADDRESS</label
+          ><input
+            type="email"
+            id="emailInput"
+            placeholder="you@example.com"
+            required
+          /><button class="btn" type="submit" data-i18n-key="sendSignIn">
+            SEND SIGN-IN LINK
+          </button>
+        </form>
+        <button
+          class="text-btn signout"
+          id="signOutButton"
+          data-i18n-key="signOut"
+        >
+          SIGN OUT
+        </button>
+        <div class="feedback" id="authFeedback" role="status"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
