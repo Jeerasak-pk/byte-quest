@@ -852,7 +852,7 @@
         font-weight: normal;
       }
     </style>
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.css?v=workspace-header-2" />
   </head>
   <body>
     <a class="skip-link" href="#dashboard" data-i18n-key="skip"
@@ -1170,7 +1170,7 @@
           <section class="editor panel" id="editor">
             <div class="quest-transition" id="questTransition" aria-hidden="true"><span></span><i></i></div>
             <div class="editor-head">
-              <div class="editor-brand"><span class="editor-title" data-i18n-key="codeArena">▸ CODE ARENA</span><div class="quest-hud" aria-label="Player rank and next goal"><span id="questHudRank">⚔ ROOKIE</span><span id="questHudLevel">LV. 01</span><span id="questHudGoal">Next rank: Apprentice · 100 XP to go</span></div></div>
+              <div class="editor-brand"><span class="editor-title" data-i18n-key="codeArena">▸ CODE ARENA</span><div class="quest-hud" aria-label="Player rank and next goal"><span class="quest-rank-chip"><span id="questHudRank">✦ ROOKIE</span><small id="questHudLevel">LV. 01</small></span><span id="questHudGoal">100 XP TO APPRENTICE</span></div></div>
               <div class="editor-controls">
                 <button
                   class="text-btn"
@@ -1515,6 +1515,6 @@ else:
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=workspace-header-2"></script>
   </body>
 </html>

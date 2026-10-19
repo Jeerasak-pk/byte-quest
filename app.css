@@ -752,10 +752,19 @@ html[data-theme="violet"] .check-btn { color:#21182a; background:linear-gradient
 }
 @media(max-width:600px) {
   .editor-head { gap:10px; }
-  .quest-hud { width:100%; flex-wrap:wrap; }
-  .quest-hud span:last-child { max-width:100%; }
+  .quest-hud { width:100%; flex-wrap:nowrap; }
+  .quest-hud span:last-child { max-width:none; }
   .editor-controls { gap:7px; }
   .editor-controls .select { flex:1 1 100%; width:100%; max-width:none; }
+}
+.quest-hud { display:flex!important; flex-direction:row!important; flex-wrap:nowrap!important; align-items:center; gap:8px; }
+.quest-hud > span { flex:0 0 auto; white-space:nowrap; }
+.quest-rank-chip { display:flex!important; flex-direction:row; align-items:center; gap:8px; }
+.quest-hud .quest-rank-chip > span,.quest-hud .quest-rank-chip > small { padding:0; border:0; border-radius:0; background:transparent; white-space:nowrap; }
+.quest-rank-chip > small { color:#d6e5e0; font:700 9px var(--pixel); letter-spacing:.03em; }
+.quest-hud > #questHudGoal { flex:0 1 auto; min-width:0; max-width:min(44vw,260px); overflow:hidden; text-overflow:ellipsis; }
+@media(max-width:600px) {
+  .quest-hud > #questHudGoal { max-width:calc(100vw - 215px); }
 }
 .verification-picker { display: grid; gap: 4px; color: #92a9af; font-size: 9px; font-weight: 800; letter-spacing: .09em; }
 .editor-tools { flex-wrap: wrap; }

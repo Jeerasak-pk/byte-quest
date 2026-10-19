@@ -452,6 +452,9 @@
   Object.assign(locales.en,{themeArcade:"ARCADE",themeViolet:"VIOLET",switchToViolet:"Switch to the Violet theme",switchToArcade:"Switch to the Arcade theme"});
   Object.assign(locales.th,{themeArcade:"อาร์เคด",themeViolet:"ไวโอเล็ต",switchToViolet:"เปลี่ยนเป็นธีมไวโอเล็ต",switchToArcade:"เปลี่ยนเป็นธีมอาร์เคด"});
   Object.assign(locales.es,{themeArcade:"ARCADE",themeViolet:"VIOLETA",switchToViolet:"Cambiar al tema violeta",switchToArcade:"Cambiar al tema arcade"});
+  Object.assign(locales.en,{rankHudGoal:"{xp} XP TO {rank}",rankHudMax:"MAX RANK"});
+  Object.assign(locales.th,{rankHudGoal:"อีก {xp} XP ถึง{rank}",rankHudMax:"อันดับสูงสุด"});
+  Object.assign(locales.es,{rankHudGoal:"{xp} XP PARA {rank}",rankHudMax:"RANGO MÁXIMO"});
   Object.assign(locales.en,{lessonEnglishFallback:"This lesson is currently shown in English."});
   Object.assign(locales.th,{lessonEnglishFallback:"บทเรียนนี้ยังไม่มีคำแปลภาษาไทย จึงแสดงเป็นภาษาอังกฤษ"});
   Object.assign(locales.es,{lessonEnglishFallback:"Esta lección aún no está traducida y se muestra en inglés."});
@@ -579,6 +582,10 @@
     const nextTier = rankTiers.find(tier => tier.level > Math.floor(xp / 100) + 1);
     return nextTier ? tr("nextRankGoal", { rank: tr(nextTier.key), xp: Math.max(0, (nextTier.level - 1) * 100 - xp) }) : tr("topRankGoal");
   }
+  function rankHudGoalForXp(xp) {
+    const nextTier = rankTiers.find(tier => tier.level > Math.floor(xp / 100) + 1);
+    return nextTier ? tr("rankHudGoal", { rank: tr(nextTier.key).toUpperCase(), xp: Math.max(0, (nextTier.level - 1) * 100 - xp) }) : tr("rankHudMax");
+  }
   function displayPrompt() {
     const lesson = currentLesson();
     const preview = isLockedPreview(), warmup = isWarmup(), task = warmup ? lesson.practice : lesson;
@@ -696,7 +703,7 @@
     $("#rankGoal").textContent = rankGoalForXp(progress.xp);
     $("#questHudRank").textContent = (rankEmblems[rankKey] || "⚔") + " " + rank.toUpperCase();
     $("#questHudLevel").textContent = "LV. " + String(xpLevel).padStart(2, "0");
-    $("#questHudGoal").textContent = rankGoalForXp(progress.xp);
+    $("#questHudGoal").textContent = rankHudGoalForXp(progress.xp);
     $("#xpTotalLabel").textContent = progress.xp.toLocaleString() + " XP";
     $("#xpToNextLabel").textContent = (100 - xpIntoLevel) + " XP";
     document.querySelectorAll(".lang-card").forEach(card => {
