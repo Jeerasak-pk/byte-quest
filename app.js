@@ -434,12 +434,15 @@
   Object.assign(locales.en,{courseLessonStatus:"LESSON {level} / {total} · {title}",allCoursesComplete:"All courses complete! Choose any course to review its lessons."});
   Object.assign(locales.th,{courseLessonStatus:"บทเรียน {level} / {total} · {title}",allCoursesComplete:"เรียนครบทุกหลักสูตรแล้ว เลือกหลักสูตรใดก็ได้เพื่อทบทวนบทเรียน"});
   Object.assign(locales.es,{courseLessonStatus:"LECCIÓN {level} / {total} · {title}",allCoursesComplete:"¡Completaste todos los cursos! Elige uno para repasar sus lecciones."});
-  Object.assign(locales.en,{rankRookie:"Rookie",rankApprentice:"Apprentice",rankAdventurer:"Adventurer",rankExpert:"Expert",rankMaster:"Master",rankLegend:"Legend"});
-  Object.assign(locales.th,{rankRookie:"มือใหม่",rankApprentice:"ผู้ฝึกหัด",rankAdventurer:"นักผจญภัย",rankExpert:"ผู้เชี่ยวชาญ",rankMaster:"ปรมาจารย์",rankLegend:"ตำนาน"});
-  Object.assign(locales.es,{rankRookie:"Novato",rankApprentice:"Aprendiz",rankAdventurer:"Aventurero",rankExpert:"Experto",rankMaster:"Maestro",rankLegend:"Leyenda"});
+  Object.assign(locales.en,{rankRookie:"Rookie",rankApprentice:"Apprentice",rankCoder:"Coder",rankPathfinder:"Pathfinder",rankRanger:"Ranger",rankSpecialist:"Specialist",rankEngineer:"Engineer",rankArchitect:"Architect",rankGuardian:"Guardian",rankMaster:"Master",rankLegend:"Legend",rankGrandmaster:"Grandmaster"});
+  Object.assign(locales.th,{rankRookie:"มือใหม่",rankApprentice:"ผู้ฝึกหัด",rankCoder:"นักเขียนโค้ด",rankPathfinder:"นักบุกเบิก",rankRanger:"เรนเจอร์",rankSpecialist:"ผู้เชี่ยวชาญ",rankEngineer:"วิศวกร",rankArchitect:"สถาปนิก",rankGuardian:"ผู้พิทักษ์",rankMaster:"ปรมาจารย์",rankLegend:"ตำนาน",rankGrandmaster:"ปรมาจารย์ขั้นสูง"});
+  Object.assign(locales.es,{rankRookie:"Novato",rankApprentice:"Aprendiz",rankCoder:"Programador",rankPathfinder:"Explorador",rankRanger:"Ranger",rankSpecialist:"Especialista",rankEngineer:"Ingeniero",rankArchitect:"Arquitecto",rankGuardian:"Guardián",rankMaster:"Maestro",rankLegend:"Leyenda",rankGrandmaster:"Gran maestro"});
   Object.assign(locales.en,{levelUpAndNext:"Player level {playerLevel} reached! +40 XP · Lesson {lesson} unlocked.",levelUpAndCourse:"Player level {playerLevel} reached! +40 XP · {language} course complete."});
   Object.assign(locales.th,{levelUpAndNext:"เลื่อนเป็นเลเวลผู้เล่น {playerLevel} แล้ว! +40 XP · ปลดล็อกบทเรียน {lesson}",levelUpAndCourse:"เลื่อนเป็นเลเวลผู้เล่น {playerLevel} แล้ว! +40 XP · เรียนจบหลักสูตร {language}"});
   Object.assign(locales.es,{levelUpAndNext:"¡Has alcanzado el nivel {playerLevel}! +40 XP · Lección {lesson} desbloqueada.",levelUpAndCourse:"¡Has alcanzado el nivel {playerLevel}! +40 XP · Curso de {language} completado."});
+  Object.assign(locales.en,{questObjective:"YOUR OBJECTIVE",questFocus:"Use {concept}. Review the lesson and syntax example, then complete the challenge above.",questRewardFirst:"+40 XP",questRewardDone:"XP CLAIMED",questWarmup:"PRACTICE · NO XP",questPreview:"PREVIEW",nextRankGoal:"Next rank: {rank} · {xp} XP to go",topRankGoal:"Top rank reached · Keep clearing lessons",rankPromotionNext:"Rank up! You are now {rank} · Player level {playerLevel} · Lesson {lesson} unlocked.",rankPromotionCourse:"Rank up! You are now {rank} · Player level {playerLevel} · Course complete.",questHudLabel:"Player rank and next goal"});
+  Object.assign(locales.th,{questObjective:"เป้าหมายของคุณ",questFocus:"ใช้แนวคิดเรื่อง{concept} ทบทวนบทเรียนและตัวอย่างไวยากรณ์ แล้วทำโจทย์ด้านบนให้สำเร็จ",questRewardFirst:"+40 XP",questRewardDone:"รับ XP แล้ว",questWarmup:"ฝึกซ้อม · ไม่มี XP",questPreview:"ตัวอย่างบทเรียน",nextRankGoal:"อันดับถัดไป: {rank} · อีก {xp} XP",topRankGoal:"ถึงอันดับสูงสุดแล้ว · ทำบทเรียนต่อเพื่อเก็บความสำเร็จ",rankPromotionNext:"เลื่อนอันดับ! คุณคือ {rank} แล้ว · เลเวลผู้เล่น {playerLevel} · ปลดล็อกบทเรียน {lesson}",rankPromotionCourse:"เลื่อนอันดับ! คุณคือ {rank} แล้ว · เลเวลผู้เล่น {playerLevel} · จบหลักสูตรแล้ว",questHudLabel:"อันดับผู้เล่นและเป้าหมายถัดไป"});
+  Object.assign(locales.es,{questObjective:"TU OBJETIVO",questFocus:"Aplica {concept}. Repasa la lección y el ejemplo de sintaxis, y completa el reto de arriba.",questRewardFirst:"+40 XP",questRewardDone:"XP RECLAMADA",questWarmup:"PRÁCTICA · SIN XP",questPreview:"VISTA PREVIA",nextRankGoal:"Siguiente rango: {rank} · faltan {xp} XP",topRankGoal:"Rango máximo alcanzado · Sigue completando lecciones",rankPromotionNext:"¡Subes de rango! Ahora eres {rank} · Nivel {playerLevel} · Lección {lesson} desbloqueada.",rankPromotionCourse:"¡Subes de rango! Ahora eres {rank} · Nivel {playerLevel} · Curso completado.",questHudLabel:"Rango del jugador y siguiente objetivo"});
   Object.assign(locales.en,{heroLessonRevisited:"Lesson reviewed. No extra XP this time.",courseAlreadyComplete:"{language} course already complete."});
   Object.assign(locales.th,{heroLessonRevisited:"ทบทวนบทเรียนแล้ว ครั้งนี้ไม่มี XP เพิ่ม",courseAlreadyComplete:"เรียนหลักสูตร {language} ครบแล้ว"});
   Object.assign(locales.es,{heroLessonRevisited:"Lección repasada. Esta vez no recibes XP adicional.",courseAlreadyComplete:"El curso de {language} ya está completo."});
@@ -539,9 +542,21 @@
     levelSelect.value = String(activeLevel);
   }
   function isLockedPreview() { const unlocked = nextUnclearedLevel(activeLanguage); return unlocked >= 0 && activeLevel > unlocked && !progress.completedLevels.includes(lessonKey()); }
+  const rankTiers = [
+    { level: 1, key: "rankRookie" }, { level: 2, key: "rankApprentice" }, { level: 3, key: "rankCoder" },
+    { level: 5, key: "rankPathfinder" }, { level: 7, key: "rankRanger" }, { level: 10, key: "rankSpecialist" },
+    { level: 13, key: "rankEngineer" }, { level: 16, key: "rankArchitect" }, { level: 20, key: "rankGuardian" },
+    { level: 25, key: "rankMaster" }, { level: 30, key: "rankLegend" }, { level: 40, key: "rankGrandmaster" }
+  ];
+  function rankForLevel(level) { return [...rankTiers].reverse().find(tier => level >= tier.level) || rankTiers[0]; }
+  function rankGoalForXp(xp) {
+    const nextTier = rankTiers.find(tier => tier.level > Math.floor(xp / 100) + 1);
+    return nextTier ? tr("nextRankGoal", { rank: tr(nextTier.key), xp: Math.max(0, (nextTier.level - 1) * 100 - xp) }) : tr("topRankGoal");
+  }
   function displayPrompt() {
     const lesson = currentLesson();
     const preview = isLockedPreview(), warmup = isWarmup(), task = warmup ? lesson.practice : lesson;
+    $(".quest-hud").setAttribute("aria-label", tr("questHudLabel"));
     const hasLessonTranslation = Boolean(lessonLocales[activeLocale]?.[activeLanguage]?.[activeLevel] && localizedLessonNotes[activeLocale]?.[activeLanguage]?.[activeLevel]);
     const languageNote = $("#lessonLanguageNote");
     languageNote.hidden = activeLocale === "en" || hasLessonTranslation;
@@ -571,6 +586,8 @@
     $("#challengeHeadingLabel").textContent = tr(preview ? "previewHeading" : warmup ? "practiceHeading" : "challengeHeading");
     $("#challengeStage").textContent = tr(preview ? "previewStage" : warmup ? "practiceStage" : "challengeStage", { level: activeLevel + 1, total: lessonLists[activeLanguage].length });
     $("#prompt").innerHTML = preview ? "<b>" + lesson.title + "</b><br>" + tr("previewSummary") : "<b>" + (warmup ? tr("warmupTitle") : lesson.title) + "</b><br>" + task.prompt;
+    $("#questReward").textContent = preview ? tr("questPreview") : warmup ? tr("questWarmup") : progress.completedLevels.includes(lessonKey()) ? tr("questRewardDone") : tr("questRewardFirst");
+    $("#questFocus").textContent = tr("questFocus", { concept: lesson.concept });
     $("#hintText").textContent = tr("hintPrompt");
     const savedDraft = progress.drafts[activeDraftKey()];
     const legacyDraft = !warmup && activeLevel === 0 ? progress.drafts[activeLanguage] : undefined;
@@ -642,9 +659,13 @@
     const xpLabel = document.querySelectorAll(".profile-stat b")[2]; if (xpLabel) xpLabel.textContent = progress.xp.toLocaleString() + " XP";
     const xpLevel = Math.floor(progress.xp / 100) + 1, xpIntoLevel = progress.xp % 100, bar = document.querySelector(".xp-box .bar i");
     if (bar) bar.style.width = xpIntoLevel + "%";
-    const rankKey = xpLevel >= 30 ? "rankLegend" : xpLevel >= 20 ? "rankMaster" : xpLevel >= 10 ? "rankExpert" : xpLevel >= 5 ? "rankAdventurer" : xpLevel >= 2 ? "rankApprentice" : "rankRookie";
+    const rankKey = rankForLevel(xpLevel).key;
     const rank = tr(rankKey), levelLabel = $("#xpLevelLabel"); if (levelLabel) levelLabel.textContent = "LV. " + String(xpLevel).padStart(2, "0") + " · " + rank;
     $("#playerRankLabel").textContent = "⚔ " + rank.toUpperCase();
+    $("#rankGoal").textContent = rankGoalForXp(progress.xp);
+    $("#questHudRank").textContent = "⚔ " + rank.toUpperCase();
+    $("#questHudLevel").textContent = "LV. " + String(xpLevel).padStart(2, "0");
+    $("#questHudGoal").textContent = rankGoalForXp(progress.xp);
     $("#xpTotalLabel").textContent = progress.xp.toLocaleString() + " XP";
     $("#xpToNextLabel").textContent = (100 - xpIntoLevel) + " XP";
     document.querySelectorAll(".lang-card").forEach(card => {
@@ -847,12 +868,15 @@
     }
     const wasCleared = progress.completedLevels.includes(lessonKey());
     const previousPlayerLevel = Math.floor(progress.xp / 100) + 1;
+    const previousRank = rankForLevel(previousPlayerLevel);
     awardMission();
     if (wasCleared) return showFeedback(tr("alreadyCleared", { level: activeLevel + 1 }), true);
     const newPlayerLevel = Math.floor(progress.xp / 100) + 1;
+    const newRank = rankForLevel(newPlayerLevel);
+    const rankPromoted = newRank.key !== previousRank.key;
     if (activeLevel < lessonLists[activeLanguage].length - 1) {
-      activeLevel++; tutorialStep = 0; displayPrompt(); showFeedback(newPlayerLevel > previousPlayerLevel ? tr("levelUpAndNext", { playerLevel: newPlayerLevel, lesson: activeLevel + 1 }) : tr("levelCleared", { level: activeLevel + 1 }), true);
-    } else showFeedback(newPlayerLevel > previousPlayerLevel ? tr("levelUpAndCourse", { playerLevel: newPlayerLevel, language: activeLanguage }) : tr("courseComplete", { language: activeLanguage }), true);
+      activeLevel++; tutorialStep = 0; displayPrompt(); showFeedback(rankPromoted ? tr("rankPromotionNext", { rank: tr(newRank.key), playerLevel: newPlayerLevel, lesson: activeLevel + 1 }) : newPlayerLevel > previousPlayerLevel ? tr("levelUpAndNext", { playerLevel: newPlayerLevel, lesson: activeLevel + 1 }) : tr("levelCleared", { level: activeLevel + 1 }), true);
+    } else showFeedback(rankPromoted ? tr("rankPromotionCourse", { rank: tr(newRank.key), playerLevel: newPlayerLevel }) : newPlayerLevel > previousPlayerLevel ? tr("levelUpAndCourse", { playerLevel: newPlayerLevel, language: activeLanguage }) : tr("courseComplete", { language: activeLanguage }), true);
   });
   $("#startQuest").onclick = () => {
     const firstCourse = Object.keys(lessonLists).find(language => !isCourseComplete(language));

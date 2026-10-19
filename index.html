@@ -922,6 +922,7 @@
               <span id="xpLevelLabel">LV. 01 · Rookie</span><b id="xpTotalLabel">0 XP</b>
             </div>
             <div class="bar"><i></i></div>
+            <div class="rank-goal" id="rankGoal" aria-live="polite">Next rank: Apprentice · 100 XP to go</div>
             <div class="xp-row" style="color: #858ba4; margin-bottom: 0">
               <span data-i18n-key="nextLevel">NEXT LEVEL</span
               ><span id="xpToNextLabel">100 XP</span>
@@ -1168,9 +1169,7 @@
           <section class="editor panel" id="editor">
             <div class="quest-transition" id="questTransition" aria-hidden="true"><span></span><i></i></div>
             <div class="editor-head">
-              <span class="editor-title" data-i18n-key="codeArena"
-                >▸ CODE ARENA</span
-              >
+              <div class="editor-brand"><span class="editor-title" data-i18n-key="codeArena">▸ CODE ARENA</span><div class="quest-hud" aria-label="Player rank and next goal"><span id="questHudRank">⚔ ROOKIE</span><span id="questHudLevel">LV. 01</span><span id="questHudGoal">Next rank: Apprentice · 100 XP to go</span></div></div>
               <div class="editor-controls">
                 <button
                   class="text-btn"
@@ -1237,9 +1236,10 @@
               <div class="lesson-source"><span id="lessonSourceLabel">REFERENCE MATERIAL</span><a id="lessonSource" href="https://docs.python.org/3/tutorial/index.html" target="_blank" rel="noopener noreferrer">Python Tutorial · Python Software Foundation</a><a id="lessonSourceMore" href="https://docs.python.org/3/reference/index.html" target="_blank" rel="noopener noreferrer">Python Language Reference</a><small id="lessonSourceNote">Original explanations and exercises are adapted for this learning game.</small></div>
             </section>
             <div class="challenge-heading"><span id="challengeHeadingLabel" data-i18n-key="challengeHeading">YOUR TURN · SOLVE THE CHALLENGE</span><span id="challengeStage"></span></div>
-            <div class="task-prompt" id="prompt">
-              Level 1: Check whether <b>score is at least 10</b>, then print
-              “Level cleared.”
+            <div class="task-prompt">
+              <div class="task-prompt-head"><span data-i18n-key="questObjective">YOUR OBJECTIVE</span><span class="quest-reward" id="questReward">+40 XP</span></div>
+              <div class="task-prompt-copy" id="prompt">Level 1: Check whether <b>score is at least 10</b>, then print “Level cleared.”</div>
+              <p class="quest-focus" id="questFocus"></p>
             </div>
             <section class="level-preview-notice" id="levelPreviewNotice" aria-live="polite" hidden>
               <div><strong id="previewOnlyTitle">CURRICULUM PREVIEW</strong><p id="previewOnlyCopy">Read the lesson concept and reference now. Clear earlier levels to unlock its exercises.</p></div>

@@ -644,6 +644,26 @@ body {
 .editor:-webkit-full-screen .editor-actions { grid-area: actions; padding: 14px 24px; }
 .editor:fullscreen .check-btn,
 .editor:-webkit-full-screen .check-btn { padding: 13px 18px; }
+.rank-goal { margin: 8px 0 10px; color: #b9e98a; font-size: 10px; line-height: 1.5; }
+.editor-brand { display:flex; align-items:center; gap:16px; min-width:0; }
+.quest-hud { display:flex; align-items:center; gap:7px; flex-wrap:wrap; min-width:0; }
+.quest-hud span { padding:6px 9px; border:1px solid #3b5050; border-radius:999px; background:#101a20; color:#c4d4d0; font-size:10px; font-weight:800; letter-spacing:.04em; }
+.quest-hud span:first-child { border-color:#687b42; background:#283425; color:#e3f790; }
+.quest-hud span:last-child { color:#b9e98a; }
+.task-prompt { border-left:3px solid #b7ed65; background:linear-gradient(110deg,#26372a,#18272b 58%,#17252d)!important; box-shadow:inset 0 1px #ffffff0a, 0 8px 22px #050a0b33; }
+.task-prompt-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:9px; color:#d8f26a; font-size:10px; font-weight:900; letter-spacing:.11em; }
+.quest-reward { padding:5px 9px; border:1px solid #6f8e4e; border-radius:999px; background:#263b28; color:#e1f790; letter-spacing:.04em; white-space:nowrap; }
+.task-prompt-copy { color:#f0f6f2; font-size:16px; line-height:1.7; }
+.task-prompt-copy b { color:#e7fb9d; text-decoration:underline; text-decoration-color:#9cce59; text-underline-offset:3px; }
+.quest-focus { margin:12px 0 0; padding-top:10px; border-top:1px solid #ffffff17; color:#b7c9c3; font-size:12px; line-height:1.6; }
+.quest-focus::before { content:"✦ "; color:#d8f26a; }
+.editor:fullscreen .task-prompt,
+.editor:-webkit-full-screen .task-prompt { align-self:stretch; }
+@media(max-width:900px) {
+  .editor-brand { align-items:flex-start; flex-direction:column; gap:8px; }
+  .quest-hud { gap:5px; }
+  .quest-hud span { padding:5px 7px; font-size:9px; }
+}
 @media (max-width: 760px) {
   .editor:fullscreen,
   .editor:-webkit-full-screen {
@@ -660,6 +680,8 @@ body {
   .editor:-webkit-full-screen .challenge-heading { padding: 15px 16px 5px; }
   .editor:fullscreen .task-prompt,
   .editor:-webkit-full-screen .task-prompt { padding: 8px 16px 14px; }
+  .editor:fullscreen .task-prompt-copy,
+  .editor:-webkit-full-screen .task-prompt-copy { font-size:15px; }
   .editor:fullscreen .level-preview-notice,
   .editor:-webkit-full-screen .level-preview-notice { grid-area: prompt; }
   .editor:fullscreen .editor-actions,
