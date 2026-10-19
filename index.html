@@ -865,6 +865,7 @@
           <div class="brand-name">BYTE <span>QUEST</span></div>
         </div>
         <div class="top-right">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to Violet theme" aria-pressed="false" title="Switch to Violet theme"><span aria-hidden="true">◐</span><span id="themeName">ARCADE</span></button>
           <label
             class="sr-only"
             for="localeSelect"
@@ -1344,13 +1345,12 @@ else:
           </section>
           <div class="lower-grid">
             <section class="mini-panel panel">
-              <h4 data-i18n-key="myQuests">▸ MY QUESTS</h4>
+              <h4 data-i18n-key="activeMission">▸ ACTIVE MISSION</h4>
               <div class="mission-row">
-                <strong data-i18n-key="clearEveryLevel"
-                  >CLEAR EVERY LEVEL</strong
-                ><em id="missionCount">0/30</em>
+                <strong id="missionTitle">Complete Python lesson 1</strong><em id="missionCount">0/1</em>
               </div>
-              <div class="bar">
+              <p class="mission-detail" id="missionDetail">Complete this lesson to earn +40 XP.</p>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
                 <i
                   id="missionBar"
                   style="width: 0%; background: var(--green)"
@@ -1376,7 +1376,7 @@ else:
         <aside class="rightcol">
           <section class="profile-card panel">
             <div class="profile-head">
-              <div class="profile-pic">P1</div>
+              <div class="profile-pic rank-avatar rank-rookie" id="playerAvatar" role="img" aria-label="Rookie rank emblem">✦</div>
               <div>
                 <div class="profile-name" data-i18n-key="playerName">
                   Pixel Rookie
