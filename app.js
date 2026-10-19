@@ -431,6 +431,21 @@
   Object.assign(locales.en,{courseCount:"116 LESSONS · 14 LANGUAGES",sixLanguages:"14 LANGUAGES",fiveLevels:"8–9 LESSONS PER COURSE",polyglotCopy:"Clear all fourteen courses",allLevelsCleared:"COURSE COMPLETE",levelsCleared:"LESSONS CLEARED",chooseLevel:"Choose a lesson"});
   Object.assign(locales.th,{courseCount:"116 บทเรียน · 14 ภาษา",sixLanguages:"14 ภาษา",fiveLevels:"คอร์สละ 8–9 บทเรียน",polyglotCopy:"ผ่านครบทั้ง 14 คอร์ส",allLevelsCleared:"จบหลักสูตรแล้ว",levelsCleared:"บทเรียนที่ผ่านแล้ว",chooseLevel:"เลือกบทเรียน"});
   Object.assign(locales.es,{courseCount:"116 LECCIONES · 14 LENGUAJES",sixLanguages:"14 LENGUAJES",fiveLevels:"8–9 LECCIONES POR CURSO",polyglotCopy:"Completa los catorce cursos",allLevelsCleared:"CURSO COMPLETADO",levelsCleared:"LECCIONES COMPLETADAS",chooseLevel:"Elige una lección"});
+  Object.assign(locales.en,{courseLessonStatus:"LESSON {level} / {total} · {title}",allCoursesComplete:"All courses complete! Choose any course to review its lessons."});
+  Object.assign(locales.th,{courseLessonStatus:"บทเรียน {level} / {total} · {title}",allCoursesComplete:"เรียนครบทุกหลักสูตรแล้ว เลือกหลักสูตรใดก็ได้เพื่อทบทวนบทเรียน"});
+  Object.assign(locales.es,{courseLessonStatus:"LECCIÓN {level} / {total} · {title}",allCoursesComplete:"¡Completaste todos los cursos! Elige uno para repasar sus lecciones."});
+  Object.assign(locales.en,{rankRookie:"Rookie",rankApprentice:"Apprentice",rankAdventurer:"Adventurer",rankExpert:"Expert",rankMaster:"Master",rankLegend:"Legend"});
+  Object.assign(locales.th,{rankRookie:"มือใหม่",rankApprentice:"ผู้ฝึกหัด",rankAdventurer:"นักผจญภัย",rankExpert:"ผู้เชี่ยวชาญ",rankMaster:"ปรมาจารย์",rankLegend:"ตำนาน"});
+  Object.assign(locales.es,{rankRookie:"Novato",rankApprentice:"Aprendiz",rankAdventurer:"Aventurero",rankExpert:"Experto",rankMaster:"Maestro",rankLegend:"Leyenda"});
+  Object.assign(locales.en,{levelUpAndNext:"Player level {playerLevel} reached! +40 XP · Lesson {lesson} unlocked.",levelUpAndCourse:"Player level {playerLevel} reached! +40 XP · {language} course complete."});
+  Object.assign(locales.th,{levelUpAndNext:"เลื่อนเป็นเลเวลผู้เล่น {playerLevel} แล้ว! +40 XP · ปลดล็อกบทเรียน {lesson}",levelUpAndCourse:"เลื่อนเป็นเลเวลผู้เล่น {playerLevel} แล้ว! +40 XP · เรียนจบหลักสูตร {language}"});
+  Object.assign(locales.es,{levelUpAndNext:"¡Has alcanzado el nivel {playerLevel}! +40 XP · Lección {lesson} desbloqueada.",levelUpAndCourse:"¡Has alcanzado el nivel {playerLevel}! +40 XP · Curso de {language} completado."});
+  Object.assign(locales.en,{heroLessonRevisited:"Lesson reviewed. No extra XP this time.",courseAlreadyComplete:"{language} course already complete."});
+  Object.assign(locales.th,{heroLessonRevisited:"ทบทวนบทเรียนแล้ว ครั้งนี้ไม่มี XP เพิ่ม",courseAlreadyComplete:"เรียนหลักสูตร {language} ครบแล้ว"});
+  Object.assign(locales.es,{heroLessonRevisited:"Lección repasada. Esta vez no recibes XP adicional.",courseAlreadyComplete:"El curso de {language} ya está completo."});
+  Object.assign(locales.en,{lessonEnglishFallback:"This lesson is currently shown in English."});
+  Object.assign(locales.th,{lessonEnglishFallback:"บทเรียนนี้ยังไม่มีคำแปลภาษาไทย จึงแสดงเป็นภาษาอังกฤษ"});
+  Object.assign(locales.es,{lessonEnglishFallback:"Esta lección aún no está traducida y se muestra en inglés."});
   Object.assign(locales.en,{verifyWith:"VERIFY WITH",verifyCombined:"Combined check · goal + syntax",verifyGoal:"Learning goal only",verifySyntax:"Syntax scan only",syntaxScanPassed:"No syntax issues were detected by this best-effort scan. This does not prove the code runs or meets the challenge goal.",goalPassedTryCombined:"The code matches the challenge requirements. Run the combined check to verify syntax and complete the lesson.",goalPassedSyntaxUncertain:"The code matches the challenge requirements, but the syntax scan found possible issues. Review them, then use the combined check to complete the lesson."});
   Object.assign(locales.th,{verifyWith:"วิธีตรวจ",verifyCombined:"ตรวจรวม · เป้าหมาย + ไวยากรณ์",verifyGoal:"ตรวจเป้าหมายการเรียน",verifySyntax:"ตรวจไวยากรณ์",syntaxScanPassed:"การตรวจเบื้องต้นไม่พบข้อผิดพลาดด้านไวยากรณ์ แต่ยังยืนยันไม่ได้ว่าโค้ดทำงานหรือผ่านเป้าหมายโจทย์",goalPassedTryCombined:"โค้ดตรงตามข้อกำหนดของโจทย์แล้ว ใช้การตรวจรวมเพื่อตรวจไวยากรณ์และผ่านบทเรียน",goalPassedSyntaxUncertain:"โค้ดตรงตามข้อกำหนดแล้ว แต่การตรวจไวยากรณ์พบจุดที่อาจมีปัญหา ตรวจดูแล้วใช้การตรวจรวมเพื่อผ่านบทเรียน"});
   Object.assign(locales.es,{verifyWith:"VERIFICAR CON",verifyCombined:"Comprobación completa · objetivo + sintaxis",verifyGoal:"Solo objetivo de aprendizaje",verifySyntax:"Solo revisión de sintaxis",syntaxScanPassed:"Esta revisión aproximada no detectó errores de sintaxis. No confirma que el código se ejecute ni que cumpla el objetivo.",goalPassedTryCombined:"El código cumple los requisitos del reto. Usa la comprobación completa para revisar la sintaxis y completar la lección.",goalPassedSyntaxUncertain:"El código cumple los requisitos, pero la revisión de sintaxis detectó posibles problemas. Revísalos y usa la comprobación completa para completar la lección."});
@@ -450,7 +465,7 @@
       HTML:[["สร้างหัวเรื่อง h1 ที่มีข้อความ Level cleared และปิดแท็กให้ครบ","แท็กหัวเรื่องต้องมีแท็กเปิดและแท็กปิด เช่น &lt;h1&gt;ข้อความ&lt;/h1&gt;"],["เพิ่มย่อหน้าที่เขียนว่า Welcome, adventurer!","ครอบข้อความด้วยแท็ก p เปิดและปิด"],["สร้าง ul ที่มี li อย่างน้อยสองรายการ","วางแต่ละรายการไว้ภายในแท็ก ul"],["เพิ่มลิงก์ไป https://example.com พร้อมข้อความ Enter","แท็ก a ใช้ href กำหนดปลายทาง"],["เพิ่มรูป hero.png พร้อมข้อความ alt ที่อธิบายรูป","แท็ก img ใช้แอตทริบิวต์ src และ alt"]],
       CSS:[["เลือกคลาส .level แล้วตั้งสีข้อความเป็น #61f3da","กฎ CSS มีรูปแบบ selector { property: value; }"],["ตั้งสีพื้นหลัง body เป็น #10121e","ใช้กฎ body พร้อมประกาศ background-color"],["ตั้ง padding ของ .card เป็น 16px","ตัวเลือกคลาสเริ่มด้วยจุด"],["เปลี่ยนสีพื้นหลังปุ่มเป็น #61f3da เมื่อชี้เมาส์","ใช้ตัวเลือก button:hover"],["จัดเนื้อหา .stage ให้อยู่กึ่งกลางทั้งสองแกนด้วย Flexbox","ใช้ display:flex พร้อม justify-content และ align-items เป็น center"]],
       SQL:[["เลือกชื่อจากตาราง players เฉพาะแถวที่ score อย่างน้อย 10","เรียงคำสั่งเป็น SELECT, FROM, WHERE"],["เลือก name และ score จากตาราง players","แยกชื่อคอลัมน์ด้วยเครื่องหมายจุลภาค"],["เลือกทุกคอลัมน์จาก players เฉพาะแถวที่ level เท่ากับ 1","ใช้ SELECT * และเพิ่มเงื่อนไข WHERE"],["เลือกชื่อและคะแนน แล้วเรียงคะแนนสูงสุดก่อน","เพิ่ม ORDER BY score DESC หลัง FROM players"],["นับแถวทั้งหมดใน players และตั้งชื่อผลลัพธ์ player_count","ใช้ COUNT(*) และตั้งชื่อด้วย AS"]],
-      Java:[["استخدم if/else للتحقق من score >= 10 ثم اطبع النتيجة","Java تستخدم الأقواس المعقوفة للمجموعات و System.out.println للطباعة"],["أنشئ int total بجمع 8 و5 ثم اطبعه","استخدم int total = 8 + 5; ثم System.out.println(total)"],["استخدم حلقة for لطباعة الأرقام من 1 إلى 3","ابدأ عند 1 واستمر ما دام العدد <= 3 ثم زد واحداً"],["أنشئ الدالة greet لطباعة Hello! واستدعها من main","عرّف static void greet() واستدع greet() من main"],["أنشئ مصفوفة String[] items بعنصرين واطبع الأول","تهيئة المصفوفة تستخدم الأقواس المعقوفة والفهرس 0 هو الأول"]]
+      Java:[["ใช้ if/else ตรวจสอบว่า score >= 10 แล้วแสดงผล","Java ใช้วงเล็บปีกกาครอบบล็อก และใช้ System.out.println() เพื่อพิมพ์"],["สร้าง int total จาก 8 + 5 แล้วพิมพ์ค่า","ใช้ int total = 8 + 5; ตามด้วย System.out.println(total)"],["ใช้ for loop พิมพ์เลข 1 ถึง 3","เริ่มที่ 1 ทำซ้ำขณะตัวนับ <= 3 แล้วเพิ่มทีละ 1"],["สร้างเมธอด greet เพื่อพิมพ์ Hello! แล้วเรียกจาก main","ประกาศ static void greet() และเรียก greet() จาก main"],["สร้างอาร์เรย์ String[] items สองค่า แล้วพิมพ์ค่าแรก","กำหนดค่าอาร์เรย์ในวงเล็บปีกกา และ index 0 คือค่าแรก"]]
     },
     es: {
       Python:[["Imprime Level cleared si la puntuación es al menos 10 y otro mensaje si es menor.","Python usa dos puntos tras if/else y sangría de cuatro espacios."],["Crea total sumando 8 y 5, y luego imprímelo.","Usa total = 8 + 5 y después print(total)."],["Usa un bucle for para imprimir los números del 1 al 3.","range(1, 4) produce 1, 2 y 3."],["Define greet(name) para imprimir el nombre y llámala con \"Ada\".","Empieza con def greet(name): y llama a greet(\"Ada\")."],["Crea una lista items con dos elementos y muestra el primero.","Las listas usan corchetes y el índice 0 es el primero."]],
@@ -483,9 +498,14 @@
   function loadState() {
     try {
       const saved = Object.assign({}, defaultProgress, JSON.parse(localStorage.getItem(stateKey)) || {});
-      saved.completedLevels = [...new Set([...(saved.completedLevels || []), ...(saved.completed || []).map(language => `${language}-1`)])];
-      saved.completedPractice = [...new Set(saved.completedPractice || [])];
-      saved.completed = Array.isArray(saved.completed) ? saved.completed : [];
+      const languages = new Set(Object.keys(lessonLists));
+      saved.completed = [...new Set((Array.isArray(saved.completed) ? saved.completed : []).filter(language => languages.has(language)))];
+      const knownLevels = new Set(Object.entries(lessonLists).flatMap(([language, lessons]) => lessons.map((_, index) => `${language}-${index + 1}`)));
+      const knownPractice = new Set([...knownLevels].map(key => `${key}-practice`));
+      saved.completedLevels = [...new Set([...(Array.isArray(saved.completedLevels) ? saved.completedLevels : []), ...saved.completed.map(language => `${language}-1`)])].filter(key => knownLevels.has(key));
+      saved.completedPractice = [...new Set(Array.isArray(saved.completedPractice) ? saved.completedPractice : [])].filter(key => knownPractice.has(key));
+      saved.xp = Number.isFinite(Number(saved.xp)) ? Math.max(0, Number(saved.xp)) : 0;
+      saved.streak = Number.isFinite(Number(saved.streak)) ? Math.max(0, Number(saved.streak)) : 0;
       saved.practiceDates = Array.isArray(saved.practiceDates) ? saved.practiceDates : [];
       saved.drafts = saved.drafts && typeof saved.drafts === "object" && !Array.isArray(saved.drafts) ? saved.drafts : {};
       return saved;
@@ -508,18 +528,24 @@
   function lessonKey(language = activeLanguage, level = activeLevel) { return `${language}-${level + 1}`; }
   function isWarmup() { return !progress.completedPractice.includes(lessonKey() + "-practice"); }
   function activeDraftKey() { return lessonKey() + (isWarmup() ? "-warmup" : ""); }
-  function nextUnclearedLevel(language) { const found = lessonLists[language].findIndex((_, index) => !progress.completedLevels.includes(lessonKey(language, index))); return found < 0 ? 0 : found; }
-  function currentLesson() { const lesson = lessonLists[activeLanguage][activeLevel], translated = lessonLocales[activeLocale]?.[activeLanguage]?.[activeLevel], note = localizedLessonNotes[activeLocale]?.[activeLanguage]?.[activeLevel], warmupPrompt = warmupLocales[activeLocale]?.[activeLanguage]?.[activeLevel]; return { ...lesson, ...(note ? { concept: note[0], explanation: note[1] } : {}), ...(translated ? { prompt: translated[0], hint: translated[1] } : {}), practice: { ...lesson.practice, ...(warmupPrompt ? { prompt: warmupPrompt } : {}) } }; }
+  function nextUnclearedLevel(language) { return lessonLists[language].findIndex((_, index) => !progress.completedLevels.includes(lessonKey(language, index))); }
+  function nextPlayableLevel(language) { const next = nextUnclearedLevel(language); return next < 0 ? lessonLists[language].length - 1 : next; }
+  function isCourseComplete(language) { return nextUnclearedLevel(language) < 0; }
+  function currentLesson() { const lessons = lessonLists[activeLanguage], index = Math.max(0, Math.min(activeLevel, lessons.length - 1)), lesson = lessons[index], translated = lessonLocales[activeLocale]?.[activeLanguage]?.[index], note = localizedLessonNotes[activeLocale]?.[activeLanguage]?.[index], warmupPrompt = warmupLocales[activeLocale]?.[activeLanguage]?.[index]; return { ...lesson, ...(note ? { concept: note[0], explanation: note[1] } : {}), ...(translated ? { prompt: translated[0], hint: translated[1] } : {}), practice: { ...lesson.practice, ...(warmupPrompt ? { prompt: warmupPrompt } : {}) } }; }
   function populateLevelPicker() {
     const unlocked = nextUnclearedLevel(activeLanguage);
     levelSelect.setAttribute("aria-label", tr("chooseLevel"));
-    levelSelect.innerHTML = lessonLists[activeLanguage].map((lesson, index) => `<option value="${index}">${lesson.title}${progress.completedLevels.includes(lessonKey(activeLanguage, index)) ? " ✓" : index > unlocked ? " · PREVIEW" : ""}</option>`).join("");
+    levelSelect.innerHTML = lessonLists[activeLanguage].map((lesson, index) => `<option value="${index}">${lesson.title}${progress.completedLevels.includes(lessonKey(activeLanguage, index)) ? " ✓" : unlocked >= 0 && index > unlocked ? " · PREVIEW" : ""}</option>`).join("");
     levelSelect.value = String(activeLevel);
   }
-  function isLockedPreview() { return activeLevel > nextUnclearedLevel(activeLanguage) && !progress.completedLevels.includes(lessonKey()); }
+  function isLockedPreview() { const unlocked = nextUnclearedLevel(activeLanguage); return unlocked >= 0 && activeLevel > unlocked && !progress.completedLevels.includes(lessonKey()); }
   function displayPrompt() {
     const lesson = currentLesson();
     const preview = isLockedPreview(), warmup = isWarmup(), task = warmup ? lesson.practice : lesson;
+    const hasLessonTranslation = Boolean(lessonLocales[activeLocale]?.[activeLanguage]?.[activeLevel] && localizedLessonNotes[activeLocale]?.[activeLanguage]?.[activeLevel]);
+    const languageNote = $("#lessonLanguageNote");
+    languageNote.hidden = activeLocale === "en" || hasLessonTranslation;
+    languageNote.textContent = languageNote.hidden ? "" : tr("lessonEnglishFallback");
     $("#lessonConcept").textContent = lesson.concept;
     $("#lessonExplanation").textContent = lesson.explanation;
     $("#lessonInsight").textContent = lesson.insight || "Focus on the syntax shown, then check how the example applies it.";
@@ -534,7 +560,8 @@
     $("#levelPreviewNotice").hidden = !preview;
     $("#previewOnlyTitle").textContent = tr("previewOnlyTitle");
     $("#previewOnlyCopy").textContent = tr("previewOnlyCopy");
-    $("#returnCurrentLevel").textContent = tr("returnCurrentLevel", { level: nextUnclearedLevel(activeLanguage) + 1 });
+    const nextLevel = nextUnclearedLevel(activeLanguage);
+    $("#returnCurrentLevel").textContent = tr("returnCurrentLevel", { level: (nextLevel < 0 ? lessonLists[activeLanguage].length - 1 : nextLevel) + 1 });
     code.disabled = preview;
     $("#checkCode").disabled = preview;
     $("#hintButton").disabled = preview;
@@ -613,22 +640,28 @@
     document.querySelector(".profile-stat b").textContent = clearedLevels + " " + tr("levelsCleared").toLowerCase();
     document.querySelectorAll(".profile-stat b")[1].textContent = currentUser ? (cloudSyncReady ? tr("cloudSync") : tr("syncPending")) : tr("savedLocally");
     const xpLabel = document.querySelectorAll(".profile-stat b")[2]; if (xpLabel) xpLabel.textContent = progress.xp.toLocaleString() + " XP";
-    const xpLevel = Math.floor(progress.xp / 100) + 1, bar = document.querySelector(".xp-box .bar i");
-    if (bar) bar.style.width = (progress.xp % 100) + "%";
-    const levelLabel = document.querySelector(".xp-row span"); if (levelLabel) levelLabel.textContent = "LV. " + String(xpLevel).padStart(2, "0") + " · " + tr("rookie");
+    const xpLevel = Math.floor(progress.xp / 100) + 1, xpIntoLevel = progress.xp % 100, bar = document.querySelector(".xp-box .bar i");
+    if (bar) bar.style.width = xpIntoLevel + "%";
+    const rankKey = xpLevel >= 30 ? "rankLegend" : xpLevel >= 20 ? "rankMaster" : xpLevel >= 10 ? "rankExpert" : xpLevel >= 5 ? "rankAdventurer" : xpLevel >= 2 ? "rankApprentice" : "rankRookie";
+    const rank = tr(rankKey), levelLabel = $("#xpLevelLabel"); if (levelLabel) levelLabel.textContent = "LV. " + String(xpLevel).padStart(2, "0") + " · " + rank;
+    $("#playerRankLabel").textContent = "⚔ " + rank.toUpperCase();
+    $("#xpTotalLabel").textContent = progress.xp.toLocaleString() + " XP";
+    $("#xpToNextLabel").textContent = (100 - xpIntoLevel) + " XP";
     document.querySelectorAll(".lang-card").forEach(card => {
       const count = lessonLists[card.dataset.lang].filter((_, index) => progress.completedLevels.includes(lessonKey(card.dataset.lang, index))).length;
       const done = count === lessonLists[card.dataset.lang].length;
       card.classList.toggle("done", done);
       const dots = card.querySelector(".dots"); if (dots) dots.textContent = "●".repeat(count) + "○".repeat(lessonLists[card.dataset.lang].length - count);
-      const next = nextUnclearedLevel(card.dataset.lang), lesson = lessonLists[card.dataset.lang][next];
+      const next = nextUnclearedLevel(card.dataset.lang), lesson = next < 0 ? null : lessonLists[card.dataset.lang][next];
       const detail = card.querySelector(".level span:first-child");
-      if (detail) detail.textContent = done ? tr("allLevelsCleared") : `LESSON ${String(next + 1).padStart(2, "0")} / ${lessonLists[card.dataset.lang].length} · ${lesson.title.replace(/^Level \d+ · /, "").toUpperCase()}`;
+      if (detail) detail.textContent = done ? tr("allLevelsCleared") : tr("courseLessonStatus", { level: String(next + 1).padStart(2, "0"), total: lessonLists[card.dataset.lang].length, title: lesson.title.replace(/^Level \d+ · /, "").toUpperCase() });
     });
     populateLevelPicker();
     $("#missionCount").textContent = clearedLevels + "/" + totalLevels;
     $("#missionBar").style.width = Math.min(100, clearedLevels / totalLevels * 100) + "%";
-    $("#continueLabel").textContent = activeLanguage + " · " + currentLesson().title.replace(/^Level \d+ · /, "");
+    const nextForCourse = nextUnclearedLevel(activeLanguage), continueButton = $("#continueQuest");
+    continueButton.disabled = nextForCourse < 0;
+    $("#continueLabel").textContent = nextForCourse < 0 ? tr("allLevelsCleared") : activeLanguage + " · " + lessonLists[activeLanguage][nextForCourse].title.replace(/^Level \d+ · /, "");
     $("#streakLabel").textContent = visibleStreak ? visibleStreak + " " + tr("dayStreak").toLowerCase() : tr("startFirstQuest");
     document.querySelectorAll(".day-dot").forEach(dot => {
       const day = Number(dot.dataset.day), start = new Date(); start.setHours(0,0,0,0);
@@ -714,7 +747,8 @@
   function showDiagnostics(items) { feedback.replaceChildren(...items.map(item=>{const row=document.createElement("div");row.className="diagnostic-row";const badge=document.createElement("strong");badge.textContent=`LINE ${item.line}`;const label=document.createElement("b");label.textContent=item.type;const text=document.createElement("span");text.textContent=item.message;row.append(badge,label,text);return row;})); feedback.className="feedback show wrong"; }
   function awardMission() {
     const key = lessonKey();
-    if (!progress.completedLevels.includes(key)) { progress.completedLevels.push(key); progress.xp += 40; }
+    const earnedXp = !progress.completedLevels.includes(key);
+    if (earnedXp) { progress.completedLevels.push(key); progress.xp += 40; }
     if (lessonLists[activeLanguage].every((_, index) => progress.completedLevels.includes(lessonKey(activeLanguage, index))) && !progress.completed.includes(activeLanguage)) progress.completed.push(activeLanguage);
     if (progress.lastPractice !== today) {
       const yesterdayDate = new Date(); yesterdayDate.setDate(yesterdayDate.getDate() - 1);
@@ -723,8 +757,9 @@
       progress.practiceDates = [...new Set([...(progress.practiceDates || []), today])].slice(-14);
     }
     saveProgress();
-    document.querySelector(".hero p").textContent = tr("heroLevelCleared", { language: activeLanguage });
+    document.querySelector(".hero p").textContent = earnedXp ? tr("heroLevelCleared", { language: activeLanguage }) : tr("heroLessonRevisited");
     document.querySelector(".hero .tag").textContent = tr("levelCompleteTag");
+    return earnedXp;
   }
   function pyCheck(src) {
     const errors = [];
@@ -811,13 +846,23 @@
       return;
     }
     const wasCleared = progress.completedLevels.includes(lessonKey());
+    const previousPlayerLevel = Math.floor(progress.xp / 100) + 1;
     awardMission();
+    if (wasCleared) return showFeedback(tr("alreadyCleared", { level: activeLevel + 1 }), true);
+    const newPlayerLevel = Math.floor(progress.xp / 100) + 1;
     if (activeLevel < lessonLists[activeLanguage].length - 1) {
-      activeLevel++; tutorialStep = 0; displayPrompt(); showFeedback(wasCleared ? tr("alreadyCleared", { level: activeLevel + 1 }) : tr("levelCleared", { level: activeLevel + 1 }), true);
-    } else showFeedback(wasCleared ? tr("courseAlreadyComplete", { language: activeLanguage }) : tr("courseComplete", { language: activeLanguage }), true);
+      activeLevel++; tutorialStep = 0; displayPrompt(); showFeedback(newPlayerLevel > previousPlayerLevel ? tr("levelUpAndNext", { playerLevel: newPlayerLevel, lesson: activeLevel + 1 }) : tr("levelCleared", { level: activeLevel + 1 }), true);
+    } else showFeedback(newPlayerLevel > previousPlayerLevel ? tr("levelUpAndCourse", { playerLevel: newPlayerLevel, language: activeLanguage }) : tr("courseComplete", { language: activeLanguage }), true);
   });
-  $("#startQuest").onclick = () => { activeLanguage = "Python"; activeLevel = nextUnclearedLevel(activeLanguage); select.value = activeLanguage; displayPrompt(); launchWorkspace(); };
-  $("#continueQuest").onclick = () => { activeLevel = nextUnclearedLevel(activeLanguage); displayPrompt(); launchWorkspace(); };
+  $("#startQuest").onclick = () => {
+    const firstCourse = Object.keys(lessonLists).find(language => !isCourseComplete(language));
+    if (!firstCourse) return notice(tr("allCoursesComplete"));
+    activeLanguage = firstCourse; activeLevel = nextPlayableLevel(activeLanguage); select.value = activeLanguage; displayPrompt(); launchWorkspace();
+  };
+  $("#continueQuest").onclick = () => {
+    if (isCourseComplete(activeLanguage)) return notice(tr("courseAlreadyComplete", { language: activeLanguage }));
+    activeLevel = nextPlayableLevel(activeLanguage); displayPrompt(); launchWorkspace();
+  };
   $("#tutorialToggle").onclick = () => $("#tutorialPanel").hidden ? openTutorial() : closeTutorial();
   $("#tutorialClose").onclick = closeTutorial;
   $("#tutorialPrev").onclick = () => { if (tutorialStep > 0) { tutorialStep--; renderTutorial(); } };
@@ -840,7 +885,7 @@
     card.setAttribute("role", "button"); card.tabIndex = 0;
     card.setAttribute("aria-label", "Open " + card.dataset.lang + " course");
     const chooseCourse = () => {
-      activeLanguage = card.dataset.lang; activeLevel = nextUnclearedLevel(activeLanguage); tutorialStep = 0; select.value = activeLanguage;
+      activeLanguage = card.dataset.lang; activeLevel = nextPlayableLevel(activeLanguage); tutorialStep = 0; select.value = activeLanguage;
       document.querySelectorAll(".lang-card").forEach(item => {
         const selected = item === card;
         item.classList.toggle("selected", selected); item.setAttribute("aria-pressed", String(selected));
@@ -850,9 +895,9 @@
     card.addEventListener("click", chooseCourse);
     card.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); chooseCourse(); } });
   });
-  select.addEventListener("change", () => { activeLanguage = select.value; activeLevel = nextUnclearedLevel(activeLanguage); tutorialStep = 0; displayPrompt(); launchWorkspace(); });
+  select.addEventListener("change", () => { activeLanguage = select.value; activeLevel = nextPlayableLevel(activeLanguage); tutorialStep = 0; displayPrompt(); launchWorkspace(); });
   levelSelect.addEventListener("change", () => { activeLevel = Number(levelSelect.value); tutorialStep = 0; displayPrompt(); launchWorkspace(); });
-  $("#returnCurrentLevel").onclick = () => { activeLevel = nextUnclearedLevel(activeLanguage); tutorialStep = 0; displayPrompt(); };
+  $("#returnCurrentLevel").onclick = () => { activeLevel = nextPlayableLevel(activeLanguage); tutorialStep = 0; displayPrompt(); };
   $("#hintButton").onclick = () => { if (isLockedPreview()) return; const lesson = currentLesson(), translatedExplanation = localizedLessonNotes[activeLocale]?.[activeLanguage]?.[activeLevel]?.[1]; $("#hintText").textContent = "💡 " + (isWarmup() ? translatedExplanation || lesson.practice.hint : lesson.hint); };
   function saveDraft() { progress.drafts[activeDraftKey()] = code.value; persistLocalProgress(); }
   $("#resetCode").onclick = () => { delete progress.drafts[activeDraftKey()]; if (activeLevel === 0 && !isWarmup()) delete progress.drafts[activeLanguage]; displayPrompt(); persistLocalProgress(); };
@@ -881,7 +926,7 @@
   $("#allLanguages").onclick = () => { document.querySelector('.course-filter[data-filter="all"]').click(); $("#languages").scrollIntoView({ behavior: "smooth", block: "start" }); };
   document.querySelectorAll(".nav button").forEach(btn => btn.addEventListener("click", () => {
     document.querySelectorAll(".nav button").forEach(item => item.classList.toggle("active", item === btn));
-    if (btn.dataset.section === "missions") { activeLevel = nextUnclearedLevel(activeLanguage); displayPrompt(); launchWorkspace(); }
+    if (btn.dataset.section === "missions") { activeLevel = nextPlayableLevel(activeLanguage); displayPrompt(); launchWorkspace(); }
     else if (btn.dataset.section === "leaderboard") notice("Leaderboard coming soon.");
     else document.getElementById(btn.dataset.section)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }));
@@ -893,11 +938,13 @@
       if (currentUser) setTimeout(() => supabaseClient.from("player_progress").select("*").eq("user_id", currentUser.id).maybeSingle().then(({ data, error }) => {
         if (error) { cloudSyncReady = false; renderProgress(); console.warn("Progress load failed:", error.message); return; }
         if (!data) return saveProgress();
-        const cloudMissions = data.completed_missions || [], languages = Object.keys(lessonLists);
+        const cloudMissions = Array.isArray(data.completed_missions) ? data.completed_missions : [], languages = Object.keys(lessonLists);
+        const knownLevels = new Set(Object.entries(lessonLists).flatMap(([language, lessons]) => lessons.map((_, index) => `${language}-${index + 1}`)));
+        const knownPractice = new Set([...knownLevels].map(key => `${key}-practice`));
         const cloud = { xp: data.xp || 0, streak: data.streak || 0,
           completed: cloudMissions.filter(item => languages.includes(item)),
-          completedLevels: cloudMissions.filter(item => /-(\d+)$/.test(item)).concat(cloudMissions.filter(item => languages.includes(item)).map(language => `${language}-1`)),
-          completedPractice: cloudMissions.filter(item => /-(\d+)-practice$/.test(item)),
+          completedLevels: cloudMissions.filter(item => knownLevels.has(item)).concat(cloudMissions.filter(item => languages.includes(item)).map(language => `${language}-1`)),
+          completedPractice: cloudMissions.filter(item => knownPractice.has(item)),
           lastPractice: data.last_practice || null, practiceDates: data.practice_dates || [] };
         progress = { xp: Math.max(progress.xp, cloud.xp), streak: Math.max(progress.streak, cloud.streak),
           completed: [...new Set([...progress.completed, ...cloud.completed])],

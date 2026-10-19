@@ -919,12 +919,12 @@
           </div>
           <div class="xp-box">
             <div class="xp-row">
-              <span id="xpLevelLabel">LV. 08 · Novice</span><b>680 XP</b>
+              <span id="xpLevelLabel">LV. 01 · Rookie</span><b id="xpTotalLabel">0 XP</b>
             </div>
             <div class="bar"><i></i></div>
             <div class="xp-row" style="color: #858ba4; margin-bottom: 0">
               <span data-i18n-key="nextLevel">NEXT LEVEL</span
-              ><span>320 XP</span>
+              ><span id="xpToNextLabel">100 XP</span>
             </div>
           </div>
         </aside>
@@ -1229,6 +1229,7 @@
                 <div><span class="lesson-kicker" data-i18n-key="lessonHeading">LEARN THE IDEA</span><h3 id="lessonConcept"></h3></div>
                 <span class="lesson-sigil" aria-hidden="true">✦</span>
               </div>
+              <p class="lesson-language-note" id="lessonLanguageNote" hidden></p>
               <p class="lesson-explanation" id="lessonExplanation"></p>
               <aside class="lesson-insight" aria-label="Key takeaway"><span>KEY TAKEAWAY</span><p id="lessonInsight"></p></aside>
               <div class="syntax-label" data-i18n-key="syntaxExample">SYNTAX EXAMPLE</div>
@@ -1380,7 +1381,7 @@ else:
                 <div class="profile-name" data-i18n-key="playerName">
                   Pixel Rookie
                 </div>
-                <div class="profile-rank" data-i18n-key="playerRank">
+                <div class="profile-rank" id="playerRankLabel" data-i18n-key="playerRank">
                   ⚔ NOVICE ADVENTURER
                 </div>
               </div>
